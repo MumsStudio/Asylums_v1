@@ -43,14 +43,14 @@ public class playercontroller : MonoBehaviour {
             transform.Translate (new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime,0f,0f));
 			playermoving = true;
 			lastMove = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0f);
-            /*if (Input.GetAxisRaw("Horizontal") > 0.5f)
+            if (Input.GetAxisRaw("Horizontal") > 0.5f)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
             else
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }*/
+            }
         }
         if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
         {
