@@ -9,6 +9,9 @@ public class playercontroller : MonoBehaviour {
     private Animator anim;
 	private bool playermoving;
 	private Vector2 lastMove;
+    public GameObject EscMenue;
+    public GameObject SceneObject;
+    public GameObject PlayerObject;
 
     private Rigidbody2D myRigidbody;    
 
@@ -60,6 +63,13 @@ public class playercontroller : MonoBehaviour {
         }
         
 		anim.SetBool ("playermoving", playermoving);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EscMenue.SetActive(true);
+            SceneObject.SetActive(false);
+            PlayerObject.SetActive(false);
+        }
     }
 
     public void playerMoveEnable()
