@@ -8,25 +8,38 @@ public class DialogueManager : MonoBehaviour {
     public Text dText;
 
     public bool dialogActive;
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    public string[] dialogLines;
+    public int currentLine;
+
+    // Use this for initialization
+    void Start () {
+        //currentLine = 0;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
+            currentLine++;
+        }
+        if (currentLine >= dialogLines.Length)
+        {
             dBox.SetActive(false);
             dialogActive = false;
 
+            currentLine = 0;
         }
-	}
+        //Debug.Log(currentLine);
 
-    public void ShowBox(string dialogue)
+        dText.text = dialogLines[currentLine];
+    }
+
+    public void ShowBox()
     {
         dialogActive = true;
         dBox.SetActive(true);
-        dText.text = dialogue;
+        //dText.text = dialogue;
     }
 }

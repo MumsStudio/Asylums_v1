@@ -724,7 +724,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b35212863e0a14a9b90d12d0282f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: "\u7761nmb\u8D77\u6765\u55E8"
+  dialogueLines:
+  - "\u6765\u55E8mb\u8D77\u6765\u55E8"
+  - "\u55E8nmb"
+  - okok
 --- !u!61 &499674190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -761,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b35212863e0a14a9b90d12d0282f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: 
+  dialogueLines: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1255,9 @@ MonoBehaviour:
   dBox: {fileID: 338391819}
   dText: {fileID: 343386977}
   dialogActive: 0
+  dialogLines:
+  - 0
+  currentLine: 0
 --- !u!1 &909776963
 GameObject:
   m_ObjectHideFlags: 0
