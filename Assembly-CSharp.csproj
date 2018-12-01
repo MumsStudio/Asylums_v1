@@ -63,9 +63,12 @@
   <ItemGroup>
     <Compile Include="Assets\DialogHolder.cs" />
     <Compile Include="Assets\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Items\Backpack.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Player\playercontroller.cs" />
-    <Compile Include="Assets\Scripts\Scriptable\Backpack.cs" />
-    <Compile Include="Assets\Scripts\Scriptable\Item.cs" />
+    <Compile Include="Assets\Scripts\SceneControl\CameraFollowingPlayer.cs" />
+    <Compile Include="Assets\Scripts\SceneControl\Room.cs" />
+    <Compile Include="Assets\Scripts\SceneControl\SceneController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/UnityProject/Asylums_v1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
