@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewRoom")]
-public class Room : ScriptableObject {
+public class Room : MonoBehaviour {
     public string roomId;
-    public GameObject roomObj;
     public bool roomOn;
+    public GameObject spriteMask;
 }

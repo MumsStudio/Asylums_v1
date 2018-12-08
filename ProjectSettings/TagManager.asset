@@ -47,3 +47,6 @@ TagManager:
   - name: 2
     uniqueID: 195974195
     locked: 0
+  - name: cover
+    uniqueID: 1587965079
+    locked: 0
