@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,11 +10,11 @@ public class DialogueManager : MonoBehaviour {
 
     public string[] dialogLines;
     public int currentLine;
-
+    private playercontroller thePlayer;
     // Use this for initialization
     void Start () {
-        //currentLine = 0;
-
+        
+        thePlayer = FindObjectOfType<playercontroller>();
     }
 	
 	// Update is called once per frame
@@ -30,8 +29,9 @@ public class DialogueManager : MonoBehaviour {
             dialogActive = false;
 
             currentLine = 0;
+            thePlayer.canMove = true;
         }
-        //Debug.Log(currentLine);
+        Debug.Log(dialogLines.Length);
 
         dText.text = dialogLines[currentLine];
     }
@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour {
     {
         dialogActive = true;
         dBox.SetActive(true);
-        //dText.text = dialogue;
+        thePlayer.canMove = false;
+       
     }
 }

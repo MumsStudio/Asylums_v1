@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogHolder : MonoBehaviour {
@@ -8,33 +7,39 @@ public class DialogHolder : MonoBehaviour {
 
     public string[] dialogueLines;
     // Use this for initialization
+    public bool inzone = false;
+
     void Start () {
         dMAn = FindObjectOfType<DialogueManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (inzone && Input.GetKeyUp(KeyCode.Space))
         {
             if (!dMAn.dialogActive)
             {
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
                 dMAn.ShowBox();
-
-              
-
+                inzone = false;
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "Player")
+        if (other.gameObject.name == "Player")
         {
-            if (Input.GetKeyUp(KeyCode.Space)){ 
-                dMAn.ShowBox();
-            }
+            inzone = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            inzone = false;
         }
     }
 }
