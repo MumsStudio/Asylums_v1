@@ -5,5 +5,5 @@ using UnityEngine;
 public class Room : MonoBehaviour {
     public string roomId;
     public bool roomOn;
-    public GameObject spriteMask;
+    public bool roomDiscovered;
 }

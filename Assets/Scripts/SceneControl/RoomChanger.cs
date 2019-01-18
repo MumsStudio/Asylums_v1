@@ -8,15 +8,27 @@ public class RoomChanger : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        var img = room.GetComponentInChildren<SpriteRenderer>();
+        float colr = 0f;
+        if (room.GetComponent<Room>().roomDiscovered)
+        {
+            colr =0.3f;
+        }
+        SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < objs.Length; i++)
+        {
+            objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, colr);
+        }
         room.GetComponent<Room>().roomOn=false;
-        img.color = new Color(img.color.r, img.color.g, img.color.b, 1f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        var img = room.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < objs.Length; i++)
+        {
+            objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, 1f);
+            Debug.Log(objs[i].color);
+        }
         room.GetComponent<Room>().roomOn = true;
-        img.color = new Color(img.color.r, img.color.g, img.color.b, 0f);
     }
 }
