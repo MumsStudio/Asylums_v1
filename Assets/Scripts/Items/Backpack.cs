@@ -9,10 +9,11 @@ public class Backpack : MonoBehaviour
     //add item into backpack
     public void addToBackpack(Item item)
     {
+        items.Add(item);
+        //popup msg needed
     }
 
     public void removeFromBackpack(Item item)
-    {
-        
+    {        
     }
 }

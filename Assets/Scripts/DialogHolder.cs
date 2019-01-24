@@ -6,6 +6,9 @@ public class DialogHolder : MonoBehaviour {
     private DialogueManager dMAn;
 
     public string[] dialogueLines;
+    //value to control access
+    public GameObject interact;
+
     // Use this for initialization
     public bool inzone = false;
 
@@ -21,6 +24,14 @@ public class DialogHolder : MonoBehaviour {
             {
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
+
+                //interaction control
+                if (interact != null)
+                {
+                    dMAn.interact = interact.GetComponent<Interact>().interact;
+                    if(dMAn.interact!=0)    dMAn.item = interact.GetComponent<Interact>().item;
+                }
+                
                 dMAn.ShowBox();
                 inzone = false;
             }

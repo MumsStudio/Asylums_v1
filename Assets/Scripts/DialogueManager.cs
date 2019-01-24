@@ -7,13 +7,17 @@ public class DialogueManager : MonoBehaviour {
     public Text dText;
 
     public bool dialogActive;
-
     public string[] dialogLines;
     public int currentLine;
+
+    //interaction behaviour
+    public int interact;
+    public Item item;
+
     private playercontroller thePlayer;
+
     // Use this for initialization
-    void Start () {
-        
+    void Start () {        
         thePlayer = FindObjectOfType<playercontroller>();
     }
 	
@@ -30,6 +34,25 @@ public class DialogueManager : MonoBehaviour {
 
             currentLine = 0;
             thePlayer.canMove = true;
+
+            //if has interact option, do interact
+            if (interact!=0)
+            {
+                switch (interact)
+                {
+                    //code 1 as take item
+                    case 1:
+                        //find backpack, and add item to back pack
+                        GameObject.FindGameObjectWithTag("Player")
+                            .GetComponentInChildren<Backpack>()
+                            .addToBackpack(item);
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
         Debug.Log(dialogLines.Length);
 
@@ -40,7 +63,6 @@ public class DialogueManager : MonoBehaviour {
     {
         dialogActive = true;
         dBox.SetActive(true);
-        thePlayer.canMove = false;
-       
+        thePlayer.canMove = false;       
     }
 }
