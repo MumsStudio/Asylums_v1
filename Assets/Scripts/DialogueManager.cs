@@ -54,8 +54,7 @@ public class DialogueManager : MonoBehaviour {
                 }
             }
         }
-        Debug.Log(dialogLines.Length);
-
+    
         dText.text = dialogLines[currentLine];
     }
 
