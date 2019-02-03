@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour {
     public int interact;
     public Item item;
     public Info info;
+    public bool triggered;
 
     private playercontroller thePlayer;
 
@@ -37,7 +38,7 @@ public class DialogueManager : MonoBehaviour {
             thePlayer.canMove = true;
 
             //if has interact option, do interact
-            if (interact!=0)
+            if (interact!=0 && !triggered)
             {
                 switch (interact)
                 {

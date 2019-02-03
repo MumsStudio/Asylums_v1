@@ -33,6 +33,8 @@ public class DialogHolder : MonoBehaviour {
                     {
                         dMAn.item = interact.GetComponent<Interact>().item;
                         dMAn.info = interact.GetComponent<Interact>().info;
+                        dMAn.triggered = interact.GetComponent<Interact>().triggered;
+                        interact.GetComponent<Interact>().triggered=true;
                     }
                 }
                 

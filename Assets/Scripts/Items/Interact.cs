@@ -8,12 +8,6 @@ public class Interact : MonoBehaviour {
     public int interact;
     public Item item;
     public Info info;
-    public GameObject popup;
-    public string msg;
     public int eventNum;
-
-    public void PopUp()
-    {
-        popup.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
-    }
+    public bool triggered;
 }
