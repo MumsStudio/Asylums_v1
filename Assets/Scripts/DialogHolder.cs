@@ -29,7 +29,11 @@ public class DialogHolder : MonoBehaviour {
                 if (interact != null)
                 {
                     dMAn.interact = interact.GetComponent<Interact>().interact;
-                    if(dMAn.interact!=0)    dMAn.item = interact.GetComponent<Interact>().item;
+                    if (dMAn.interact != 0)
+                    {
+                        dMAn.item = interact.GetComponent<Interact>().item;
+                        dMAn.info = interact.GetComponent<Interact>().info;
+                    }
                 }
                 
                 dMAn.ShowBox();
