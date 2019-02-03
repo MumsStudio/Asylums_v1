@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour {
     //interaction behaviour
     public int interact;
     public Item item;
+    public Info info;
 
     private playercontroller thePlayer;
 
@@ -47,9 +48,15 @@ public class DialogueManager : MonoBehaviour {
                             .GetComponentInChildren<Backpack>()
                             .addToBackpack(item);
                         break;
+                    //code 2 as take important item
                     case 2:
                         break;
+                    //code 3 as take info
                     default:
+                        //put info into database, save if no duplicate
+                        GameObject.FindGameObjectWithTag("Player")
+                            .GetComponentInChildren<Backpack>()
+                            .addInfo(info);
                         break;
                 }
             }
