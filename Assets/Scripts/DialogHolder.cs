@@ -11,7 +11,9 @@ public class DialogHolder : MonoBehaviour {
 
     // Use this for initialization
     public bool inzone = false;
-
+    //image
+    public Sprite[] DialogPortraitL;
+    public Sprite[] DialogPortraitR;
     void Start () {
         dMAn = FindObjectOfType<DialogueManager>();
 	}
@@ -39,6 +41,8 @@ public class DialogHolder : MonoBehaviour {
                 }
                 
                 dMAn.ShowBox();
+                dMAn.imageL = DialogPortraitL;
+                dMAn.imageR = DialogPortraitR;
                 inzone = false;
             }
         }

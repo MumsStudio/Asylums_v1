@@ -18,6 +18,13 @@ public class DialogueManager : MonoBehaviour {
 
     private playercontroller thePlayer;
 
+    //image
+    public Image DialogPortraitL;
+    public Image DialogPortraitR;
+
+    public Sprite[] imageL;
+    public Sprite[] imageR;
+    public Sprite blank;
     // Use this for initialization
     void Start () {        
         thePlayer = FindObjectOfType<playercontroller>();
@@ -64,6 +71,12 @@ public class DialogueManager : MonoBehaviour {
         }
     
         dText.text = dialogLines[currentLine];
+
+        //add picture
+        if (imageL[currentLine] == null) DialogPortraitL.sprite = blank;
+        else DialogPortraitL.sprite = imageL[currentLine];
+        if (imageR[currentLine] == null) DialogPortraitR.sprite = blank;
+        else DialogPortraitR.sprite = imageR[currentLine];
     }
 
     public void ShowBox()
