@@ -6,9 +6,8 @@ using UnityEngine;
 public class playercontroller : MonoBehaviour {
 
     public float moveSpeed;
-    private Animator anim;
 	private bool playermoving;
-	private Vector2 lastMove;
+    private Animator anim;
     public GameObject EscMenue;
     public GameObject SceneObject;
     public GameObject PlayerObject;
@@ -31,13 +30,8 @@ public class playercontroller : MonoBehaviour {
         {
             myRigidbody.velocity = Vector2.zero;
             playermoving = false;
-
-            anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-            anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+            
             anim.SetBool("playermoving", playermoving);
-            anim.SetFloat("lastMoveX", lastMove.x);
-            anim.SetFloat("lastMoveY", lastMove.y);
-
             return;
         }
 
@@ -45,7 +39,6 @@ public class playercontroller : MonoBehaviour {
         {
             transform.Translate (new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime,0f,0f));
 			playermoving = true;
-			lastMove = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0f);
             if (Input.GetAxisRaw("Horizontal") > 0.5f)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
@@ -59,7 +52,6 @@ public class playercontroller : MonoBehaviour {
         {
             transform.Translate(new Vector3(0f,Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
 			playermoving = true;
-			lastMove = new Vector2 (0f, Input.GetAxisRaw("Vertical"));
         }
         
 		anim.SetBool ("playermoving", playermoving);

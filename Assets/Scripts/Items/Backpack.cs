@@ -6,6 +6,7 @@ public class Backpack : MonoBehaviour
 {
     public List<Item> items;
     public List<Info> infoDB;
+    public List<PlotEvent> eventsDone;
     public GameObject pop;
 
     //add item into backpack
