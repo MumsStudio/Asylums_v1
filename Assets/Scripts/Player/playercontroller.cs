@@ -6,15 +6,16 @@ using UnityEngine;
 public class playercontroller : MonoBehaviour {
 
     public float moveSpeed;
-	private bool playermoving;
-    private Animator anim;
     public GameObject EscMenue;
     public GameObject SceneObject;
     public GameObject PlayerObject;
 
+	private bool playermoving;
+    private Animator anim;
     private Rigidbody2D myRigidbody;    
 
     public bool canMove;
+
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
@@ -68,5 +69,22 @@ public class playercontroller : MonoBehaviour {
     {
         canMove = true;
         //Debug.Log("Player movement enable.");
+    }
+
+    public void SavePlayer()
+    {
+        Debug.Log("game saved");
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        Debug.Log("game loaded");
+        SaveData data = SaveSystem.LoadPlayer();
+        Vector2 position;
+
+        position.x = data.position.x;
+        position.y = data.position.y;
+        transform.position = position;
     }
 }
