@@ -1311,8 +1311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.3, y: -19.8}
-  m_SizeDelta: {x: 217.47, y: 45.26}
+  m_AnchoredPosition: {x: -54, y: -86}
+  m_SizeDelta: {x: 428.6, y: 114.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338391821
 MonoBehaviour:
@@ -1380,8 +1380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00048637, y: -0.44}
-  m_SizeDelta: {x: 241.64, y: 44.38}
+  m_AnchoredPosition: {x: -23, y: 12.61}
+  m_SizeDelta: {x: 419, y: 70.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343386977
 MonoBehaviour:
@@ -1404,7 +1404,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2336,7 +2336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: -17.13}
+  m_AnchoredPosition: {x: 117, y: -39.97}
   m_SizeDelta: {x: 352.46, y: 34.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686307466
@@ -2360,7 +2360,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2684,6 +2684,7 @@ GameObject:
   - component: {fileID: 714218437}
   - component: {fileID: 714218436}
   - component: {fileID: 714218435}
+  - component: {fileID: 714218439}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2770,6 +2771,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &714218439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714218434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3249de61ce2696e4284f8084119724af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &777256814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,8 +3015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.365974, y: 66.15}
-  m_SizeDelta: {x: 108.74, y: 88.8}
+  m_AnchoredPosition: {x: 139.3, y: 106.7}
+  m_SizeDelta: {x: 123, y: 98.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &801097395
 MonoBehaviour:
@@ -5792,8 +5804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.366, y: 66.149994}
-  m_SizeDelta: {x: 108.74, y: 88.8}
+  m_AnchoredPosition: {x: -134.4, y: 106.7}
+  m_SizeDelta: {x: 116.1, y: 98.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538728217
 MonoBehaviour:
@@ -6296,6 +6308,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1961192442}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 714218439}
+        m_MethodName: resume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7389,7 +7412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196, y: -184}
+  m_AnchoredPosition: {x: 281, y: -172}
   m_SizeDelta: {x: 76.59, y: 24.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961192444
@@ -7487,17 +7510,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1776335570}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 714218439}
+        m_MethodName: Pasue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1961192442}
         m_MethodName: SetActive
         m_Mode: 6
