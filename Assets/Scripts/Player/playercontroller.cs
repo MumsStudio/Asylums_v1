@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class playercontroller : MonoBehaviour {
 
@@ -9,6 +11,7 @@ public class playercontroller : MonoBehaviour {
     public GameObject EscMenue;
     public GameObject SceneObject;
     public GameObject PlayerObject;
+    public SaveData data;
 
 	private bool playermoving;
     private Animator anim;
@@ -70,21 +73,61 @@ public class playercontroller : MonoBehaviour {
         canMove = true;
         //Debug.Log("Player movement enable.");
     }
-
-    public void SavePlayer()
+    
+    //map values player currently have to the save data
+    private void RefreshSaveData()
     {
-        Debug.Log("game saved");
-        SaveSystem.SavePlayer(this);
+        if (data.position == null)
+        {
+            data.position = new Position();
+        }
+        data.position.x = PlayerObject.transform.position.x;
+        data.position.y = PlayerObject.transform.position.y;
+        data.items = PlayerObject.GetComponentInChildren<Backpack>().items;
+        data.infoDB = PlayerObject.GetComponentInChildren<Backpack>().infoDB;
+        data.eventsDone = PlayerObject.GetComponentInChildren<Backpack>().eventsDone;
+        //will figur out how to handle room changer later
+        //data.room = ;
+        Debug.Log("Save Data Refreshed.");
     }
 
-    public void LoadPlayer()
+    private void PutSaveDataToPlayer()
     {
-        Debug.Log("game loaded");
-        SaveData data = SaveSystem.LoadPlayer();
-        Vector2 position;
+        PlayerObject.transform.position = new Vector2(data.position.x, data.position.y);
+        PlayerObject.GetComponentInChildren<Backpack>().items = data.items;
+        PlayerObject.GetComponentInChildren<Backpack>().infoDB = data.infoDB;
+        PlayerObject.GetComponentInChildren<Backpack>().eventsDone = data.eventsDone;
+        Debug.Log("Save Data has put onto player.");
+    }
 
-        position.x = data.position.x;
-        position.y = data.position.y;
-        transform.position = position;
+    public void PlayerSaveData()
+    {
+        //update data store first
+        RefreshSaveData();
+
+        //create a file or opne one to save to 
+        FileStream file = new FileStream(Application.persistentDataPath+"/save.dat", FileMode.OpenOrCreate);
+        //binary formater add
+        BinaryFormatter formatter = new BinaryFormatter();
+        //serialization method to WRITE to the file
+        formatter.Serialize(file, data);
+        file.Close();
+        Debug.Log("Data Saved.");
+    }
+
+    public void PlayerLoadData()
+    {
+        //opne a file to load from
+        FileStream file = new FileStream(Application.persistentDataPath + "/save.dat", FileMode.OpenOrCreate);
+        //binary formater add
+        BinaryFormatter formatter = new BinaryFormatter();
+        //serialization method to WRITE to the file
+        data = (SaveData) formatter.Deserialize(file);
+        file.Close();
+        Debug.Log("Data Load to Player.data");
+
+        //put loaded data to where it should do the work
+        PutSaveDataToPlayer();
+        Debug.Log("Load Done!");
     }
 }
