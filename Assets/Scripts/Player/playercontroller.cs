@@ -113,6 +113,8 @@ public class playercontroller : MonoBehaviour {
         formatter.Serialize(file, data);
         file.Close();
         Debug.Log("Data Saved.");
+        //remeber to set player able to walk back to true
+        canMove = true;
     }
 
     public void PlayerLoadData()
@@ -129,5 +131,8 @@ public class playercontroller : MonoBehaviour {
         //put loaded data to where it should do the work
         PutSaveDataToPlayer();
         Debug.Log("Load Done!");
+
+        //remeber to set player able to walk back to true
+        canMove = true;
     }
 }

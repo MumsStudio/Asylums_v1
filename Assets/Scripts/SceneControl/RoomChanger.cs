@@ -6,6 +6,21 @@ public class RoomChanger : MonoBehaviour {
     public GameObject player;
     public GameObject room;
 
+    private void Start()
+    {
+        float colr = 0f;
+        if (room.GetComponent<Room>().roomDiscovered)
+        {
+            colr = 0.3f;
+        }
+        SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < objs.Length; i++)
+        {
+            objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, colr);
+        }
+        room.GetComponent<Room>().roomOn = false;
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
         float colr = 0f;
@@ -23,6 +38,7 @@ public class RoomChanger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        room.GetComponent<Room>().roomDiscovered = true;
         SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
         for (int i = 0; i < objs.Length; i++)
         {
