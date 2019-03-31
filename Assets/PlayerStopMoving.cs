@@ -4,14 +4,42 @@ using UnityEngine;
 
 public class PlayerStopMoving : MonoBehaviour {
     private playercontroller PMove;
-    public void Pasue()
+    public GameObject gameScene;
+    public GameObject pauseMenuUI;
+
+    public static bool GameIsPaused = false;
+
+    private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+
+    public void Pause()
+    {
+        gameScene.SetActive(false);
+        pauseMenuUI.SetActive(true);
         PMove = FindObjectOfType<playercontroller>();
         PMove.canMove = false;
+        GameIsPaused = true;
     }
-    public void resume()
+    public void Resume()
     {
+        gameScene.SetActive(true);
+        pauseMenuUI.SetActive(false);
         PMove.canMove = true;
+        GameIsPaused = false;
     }
   
+
 }
