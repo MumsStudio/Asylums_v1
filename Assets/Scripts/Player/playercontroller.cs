@@ -86,9 +86,8 @@ public class playercontroller : MonoBehaviour {
         data.items = PlayerObject.GetComponentInChildren<Backpack>().items;
         data.infoDB = PlayerObject.GetComponentInChildren<Backpack>().infoDB;
         data.eventsDone = PlayerObject.GetComponentInChildren<Backpack>().eventsDone;
-        //will figur out how to handle room changer later
-        //data.room = ;
-        Debug.Log("Save Data Refreshed.");
+        data.roomExplored = PlayerObject.GetComponentInChildren<Backpack>().roomExplored;
+        //Debug.Log("Save Data Refreshed.");
     }
 
     private void PutSaveDataToPlayer()
@@ -97,7 +96,8 @@ public class playercontroller : MonoBehaviour {
         PlayerObject.GetComponentInChildren<Backpack>().items = data.items;
         PlayerObject.GetComponentInChildren<Backpack>().infoDB = data.infoDB;
         PlayerObject.GetComponentInChildren<Backpack>().eventsDone = data.eventsDone;
-        Debug.Log("Save Data has put onto player.");
+        PlayerObject.GetComponentInChildren<Backpack>().roomExplored = data.roomExplored;
+        //Debug.Log("Save Data has put onto player.");
     }
 
     public void PlayerSaveData()
@@ -112,7 +112,7 @@ public class playercontroller : MonoBehaviour {
         //serialization method to WRITE to the file
         formatter.Serialize(file, data);
         file.Close();
-        Debug.Log("Data Saved.");
+        //Debug.Log("Data Saved.");
         //remeber to set player able to walk back to true
         canMove = true;
     }
@@ -126,11 +126,11 @@ public class playercontroller : MonoBehaviour {
         //serialization method to WRITE to the file
         data = (SaveData) formatter.Deserialize(file);
         file.Close();
-        Debug.Log("Data Load to Player.data");
+        //Debug.Log("Data Load to Player.data");
 
         //put loaded data to where it should do the work
         PutSaveDataToPlayer();
-        Debug.Log("Load Done!");
+        //Debug.Log("Load Done!");
 
         //remeber to set player able to walk back to true
         canMove = true;

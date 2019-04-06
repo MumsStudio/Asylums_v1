@@ -9,7 +9,7 @@ public class RoomChanger : MonoBehaviour {
     private void Start()
     {
         float colr = 0f;
-        if (room.GetComponent<Room>().roomDiscovered)
+        if (player.GetComponentInChildren<Backpack>().IfRoomExplored(room.GetComponent<Room>().roomId))
         {
             colr = 0.3f;
         }
@@ -23,28 +23,34 @@ public class RoomChanger : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        float colr = 0f;
-        if (room.GetComponent<Room>().roomDiscovered)
+        if (other.Equals(player.GetComponent<Collider2D>()))
         {
-            colr =0.3f;
-        }
-        SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
-        for (int i = 0; i < objs.Length; i++)
-        {
-            objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, colr);
-        }
-        room.GetComponent<Room>().roomOn=false;
+            float colr = 0f;
+            if (room.GetComponent<Room>().roomDiscovered)
+            {
+                colr =0.3f;
+            }
+            SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
+            for (int i = 0; i < objs.Length; i++)
+            {
+                objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, colr);
+            }
+            room.GetComponent<Room>().roomOn=false;
+        }            
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        room.GetComponent<Room>().roomDiscovered = true;
-        SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
-        for (int i = 0; i < objs.Length; i++)
+        if (other.Equals(player.GetComponent<Collider2D>()))
         {
-            objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, 1f);
-            //Debug.Log(objs[i].color);
-        }
-        room.GetComponent<Room>().roomOn = true;
+            room.GetComponent<Room>().roomDiscovered = true;
+            SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
+            for (int i = 0; i < objs.Length; i++)
+            {
+                objs[i].color = new Color(objs[i].color.r, objs[i].color.g, objs[i].color.b, 1f);
+            }
+            room.GetComponent<Room>().roomOn = true;
+            player.GetComponentInChildren<Backpack>().addRoomExplored(room.GetComponent<Room>().roomId);
+        }       
     }
 }

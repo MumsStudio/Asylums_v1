@@ -7,6 +7,7 @@ public class Backpack : MonoBehaviour
     public List<Item> items;
     public List<Info> infoDB;
     public List<PlotEvent> eventsDone;
+    public List<string> roomExplored;
     public GameObject pop;
 
     //add item into backpack
@@ -48,5 +49,22 @@ public class Backpack : MonoBehaviour
                 pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
             }
         }        
+    }
+
+    public void addRoomExplored(string roomId)
+    {
+        if (!IfRoomExplored(roomId))
+        {
+            this.roomExplored.Add(roomId);
+        }        
+    }
+
+    public bool IfRoomExplored(string roomId)
+    {
+        foreach(string rom in roomExplored)
+        {
+            if (rom == roomId) return true;
+        }
+        return false;
     }
 }

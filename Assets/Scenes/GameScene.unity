@@ -5832,6 +5832,7 @@ MonoBehaviour:
   items: []
   infoDB: []
   eventsDone: []
+  roomExplored: []
   pop: {fileID: 1503362270}
 --- !u!1 &1333666325
 GameObject:
@@ -7990,6 +7991,7 @@ MonoBehaviour:
     items: []
     infoDB: []
     eventsDone: []
+    roomExplored: []
   canMove: 1
 --- !u!95 &1776335572
 Animator:

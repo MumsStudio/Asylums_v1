@@ -9,7 +9,7 @@ public class SaveData
     public List<Item> items;
     public List<Info> infoDB;
     public List<PlotEvent> eventsDone;
-    //public GameObject roomStates;    
+    public List<string> roomExplored;    
 }
 
 [System.Serializable]
