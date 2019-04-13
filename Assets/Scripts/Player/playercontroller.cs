@@ -66,6 +66,12 @@ public class playercontroller : MonoBehaviour {
             SceneObject.SetActive(false);
             PlayerObject.SetActive(false);
         }
+        if (EscMenue.activeSelf&&Input.GetKeyDown(KeyCode.Escape))
+        {
+            EscMenue.SetActive(false);
+            SceneObject.SetActive(true);
+            PlayerObject.SetActive(true);
+        }
     }
 
     public void playerMoveEnable()
