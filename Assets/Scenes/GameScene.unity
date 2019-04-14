@@ -4059,17 +4059,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1873212379}
         m_MethodName: SetActive
         m_Mode: 6
@@ -4094,6 +4083,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1776335571}
         m_MethodName: PlayerSaveData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 714218439}
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6434,17 +6434,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1873212379}
         m_MethodName: SetActive
         m_Mode: 6
@@ -6469,6 +6458,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1776335571}
         m_MethodName: PlayerLoadData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 714218439}
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7197,6 +7197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484784115}
+  - component: {fileID: 1484784129}
   - component: {fileID: 1484784128}
   - component: {fileID: 1484784127}
   - component: {fileID: 1484784126}
@@ -7560,6 +7561,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.57367, y: 1.4911423}
   m_EdgeRadius: 0
+--- !u!114 &1484784129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484784114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef799a64b471a540b72baca4899dfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 346470334}
+  - {fileID: 1569549721}
+  - {fileID: 103190984}
+  - {fileID: 399984861}
+  - {fileID: 831527954}
 --- !u!1 &1503362270
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,6 +8677,7 @@ MonoBehaviour:
   EscMenue: {fileID: 683820176}
   SceneObject: {fileID: 103190984}
   PlayerObject: {fileID: 1776335570}
+  RoomInitializer: {fileID: 1484784114}
   data:
     position:
       x: 0

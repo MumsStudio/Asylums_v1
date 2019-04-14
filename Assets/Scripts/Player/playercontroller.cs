@@ -11,6 +11,7 @@ public class playercontroller : MonoBehaviour {
     public GameObject EscMenue;
     public GameObject SceneObject;
     public GameObject PlayerObject;
+    public GameObject RoomInitializer;
     public SaveData data;
 
 	private bool playermoving;
@@ -103,6 +104,10 @@ public class playercontroller : MonoBehaviour {
         PlayerObject.GetComponentInChildren<Backpack>().infoDB = data.infoDB;
         PlayerObject.GetComponentInChildren<Backpack>().eventsDone = data.eventsDone;
         PlayerObject.GetComponentInChildren<Backpack>().roomExplored = data.roomExplored;
+
+        //set rooms' state
+        RoomInitializer.GetComponentInChildren<RoomInitializer>().RoomInitialize();
+        Debug.Log("Room Initialized.");
         //Debug.Log("Save Data has put onto player.");
     }
 

@@ -8,10 +8,16 @@ public class RoomChanger : MonoBehaviour {
 
     private void Start()
     {
+        InitializeRoomState();        
+    }
+
+    public void InitializeRoomState()
+    {
         float colr = 0f;
         if (player.GetComponentInChildren<Backpack>().IfRoomExplored(room.GetComponent<Room>().roomId))
         {
             colr = 0.3f;
+            Debug.Log(this.name + " has been explored.");
         }
         SpriteRenderer[] objs = room.GetComponentsInChildren<SpriteRenderer>();
         for (int i = 0; i < objs.Length; i++)
