@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerStopMoving.cs" />
     <Compile Include="Assets\Scripts\AwakeSet.cs" />
     <Compile Include="Assets\Scripts\CanvasControl\PopUpMsgController.cs" />
     <Compile Include="Assets\Scripts\changeVolume.cs" />
@@ -74,6 +73,8 @@
     <Compile Include="Assets\Scripts\Items\PlotEvent.cs" />
     <Compile Include="Assets\Scripts\Player\playercontroller.cs" />
     <Compile Include="Assets\Scripts\Player\SaveData.cs" />
+    <Compile Include="Assets\Scripts\PlayerStopMoving.cs" />
+    <Compile Include="Assets\Scripts\RoomExploredText.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\SceneControl\CameraFollowingPlayer.cs" />
     <Compile Include="Assets\Scripts\SceneControl\Room.cs" />
