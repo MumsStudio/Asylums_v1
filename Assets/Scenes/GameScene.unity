@@ -3453,6 +3453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3249de61ce2696e4284f8084119724af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PMove: {fileID: 1776335571}
   gameScene: {fileID: 1484784114}
   pauseMenuUI: {fileID: 683820176}
 --- !u!114 &714218440

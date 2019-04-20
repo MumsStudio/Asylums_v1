@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStopMoving : MonoBehaviour {
-    private playercontroller PMove;
+    public playercontroller PMove;
     public GameObject gameScene;
     public GameObject pauseMenuUI;
 
