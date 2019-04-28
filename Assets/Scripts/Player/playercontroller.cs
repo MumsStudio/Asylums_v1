@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class playercontroller : MonoBehaviour {
 
-    public float moveSpeed;
+    public float moveSpeed ;
     public GameObject EscMenue;
     public GameObject SceneObject;
     public GameObject PlayerObject;
@@ -60,7 +60,7 @@ public class playercontroller : MonoBehaviour {
         }
         
 		anim.SetBool ("playermoving", playermoving);
-
+        //ESC keyword active menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             EscMenue.SetActive(true);
@@ -73,6 +73,16 @@ public class playercontroller : MonoBehaviour {
             SceneObject.SetActive(true);
             PlayerObject.SetActive(true);
         }
+        //shift keyword accelerate player 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {    
+            moveSpeed = 2.4f;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 0.8f;
+        }
+
     }
 
     public void playerMoveEnable()
