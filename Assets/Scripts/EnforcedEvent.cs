@@ -6,6 +6,7 @@ public class EnforcedEvent : MonoBehaviour {
 
     //enforced event is called once player entered the trigger zone, and destroyed once done
     public DialogHolder eventDialog;
+    public bool jobdone;
     
     private void OnTriggerEnter2D(Collider2D colli)
     {
@@ -14,6 +15,7 @@ public class EnforcedEvent : MonoBehaviour {
         {
             Debug.Log("Player in desnated area");
             eventDialog.enforcedEventCalled = true;
+            jobdone = true;
         }
     }
 }
