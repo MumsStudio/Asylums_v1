@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class DialogHolder : MonoBehaviour {
-    //public string dialogue;
+
     private DialogueManager dMAn;
 
     public string[] dialogueLines;
@@ -14,18 +14,27 @@ public class DialogHolder : MonoBehaviour {
     //image
     public Sprite[] DialogPortraitL;
     public Sprite[] DialogPortraitR;
-    void Start () {
+
+    //for enforced event control purpose
+    public bool isEnforcedEvent;
+    public bool enforcedEventCalled;
+
+    void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (inzone && Input.GetKeyUp(KeyCode.Space))
+        enforcedEventCalled = false;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if ((inzone && Input.GetKeyUp(KeyCode.Space)) || (enforcedEventCalled && isEnforcedEvent))
         {
             if (!dMAn.dialogActive)
             {
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
+
+                //enforced event control
+                dMAn.dialogHolder = this;
 
                 //interaction control
                 if (interact != null)
@@ -39,7 +48,7 @@ public class DialogHolder : MonoBehaviour {
                         interact.GetComponent<Interact>().triggered=true;
                     }
                 }
-                
+
                 dMAn.ShowBox();
                 dMAn.imageL = DialogPortraitL;
                 dMAn.imageR = DialogPortraitR;

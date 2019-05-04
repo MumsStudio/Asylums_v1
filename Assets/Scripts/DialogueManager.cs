@@ -25,6 +25,10 @@ public class DialogueManager : MonoBehaviour {
     public Sprite[] imageL;
     public Sprite[] imageR;
     public Sprite blank;
+
+    //enforced event control
+    public DialogHolder dialogHolder;
+
     // Use this for initialization
     void Start () {        
         thePlayer = FindObjectOfType<playercontroller>();
@@ -67,6 +71,12 @@ public class DialogueManager : MonoBehaviour {
                             .addInfo(info);
                         break;
                 }
+            }
+
+            //if is an enforced event, destroy event after finish
+            if (dialogHolder.isEnforcedEvent)
+            {
+                Destroy(dialogHolder);
             }
         }
     
