@@ -4,8 +4,9 @@ using UnityEngine;
 public class DialogHolder : MonoBehaviour {
 
     private DialogueManager dMAn;
-
     public string[] dialogueLines;
+    public bool disable;
+
     //value to control access
     public GameObject interact;
 
@@ -19,6 +20,9 @@ public class DialogHolder : MonoBehaviour {
     public bool isEnforcedEvent;
     public bool enforcedEventCalled;
 
+    //for post-conversation controll
+    public DialogHolder dialogAfterEvent;
+
     void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
         enforcedEventCalled = false;
@@ -26,7 +30,11 @@ public class DialogHolder : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if ((inzone && Input.GetKeyUp(KeyCode.Space)) || (enforcedEventCalled && isEnforcedEvent))
+
+        //if disabled, do nothing besides close dialog ui
+        if (disable) { }
+        else if ((inzone && Input.GetKeyUp(KeyCode.Space))
+            || (enforcedEventCalled && isEnforcedEvent))
         {
             if (!dMAn.dialogActive)
             {
@@ -35,6 +43,7 @@ public class DialogHolder : MonoBehaviour {
 
                 //enforced event control
                 dMAn.dialogHolder = this;
+                dMAn.dialogAfterEvent = this.dialogAfterEvent;
 
                 //interaction control
                 if (interact != null)
@@ -45,7 +54,7 @@ public class DialogHolder : MonoBehaviour {
                         dMAn.item = interact.GetComponent<Interact>().item;
                         dMAn.info = interact.GetComponent<Interact>().info;
                         dMAn.triggered = interact.GetComponent<Interact>().triggered;
-                        interact.GetComponent<Interact>().triggered=true;
+                        interact.GetComponent<Interact>().triggered = true;
                     }
                 }
 
@@ -70,6 +79,11 @@ public class DialogHolder : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             inzone = false;
+            if (disable)
+            {
+                // post-dialog trigger
+                dialogAfterEvent.gameObject.SetActive(true);
+            }                
         }
     }
 }

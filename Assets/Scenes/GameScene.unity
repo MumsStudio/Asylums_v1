@@ -757,6 +757,7 @@ MonoBehaviour:
   dialogueLines:
   - "\u8FD9\u662F\u4E00\u9897\u5C0F\u661F\u661F"
   - "\u4E0D\u7075\u4E0D\u7075~~"
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -769,6 +770,7 @@ MonoBehaviour:
   - {fileID: 0}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &81452617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1104,7 +1106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 158977510}
-  - component: {fileID: 158977512}
   - component: {fileID: 158977511}
   m_Layer: 9
   m_Name: EventDialogueZone
@@ -1139,6 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - meet wooden
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -1147,31 +1149,7 @@ MonoBehaviour:
   - {fileID: 0}
   isEnforcedEvent: 1
   enforcedEventCalled: 0
---- !u!61 &158977512
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 158977509}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.2258677, y: -1.4107332}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.48263177, y: 0.67564344}
-  m_EdgeRadius: 0
+  dialogAfterEvent: {fileID: 172549276}
 --- !u!1 &172366434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &172549275
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,6 +1269,7 @@ MonoBehaviour:
   dialogueLines:
   - "\u9047\u5230\u95EE\u9898\u7684\u8BDD\uFF0C\u968F\u65F6\u6765\u627E\u6211\u3002"
   - "\u4EC0\u4E48\u4E8B\u60C5\uFF0C\u4E00\u6B21\u505A\u4E0D\u597D\uFF0C\u91CD\u590D\u505A\u4E0D\u5C31\u597D\u4E86\u561B\uFF01 "
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -1301,6 +1280,7 @@ MonoBehaviour:
   - {fileID: 0}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &172549277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2437,6 +2417,7 @@ MonoBehaviour:
   dialogueLines:
   - "\u4E00\u5F20\u80AE\u810F\u7684\u5E8A\u94FA\u3002"
   - "\u6211\u73B0\u5728\u5E76\u4E0D\u60F3\u7761\u89C9\u3002"
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -2447,6 +2428,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &499674190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3293,6 +3275,7 @@ MonoBehaviour:
   dialogueLines:
   - "\u6709\u8840\u8FF9\u7684\u9A6C\u6876\u3002"
   - "\uFF1F"
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -3303,6 +3286,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &630927520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4379,6 +4363,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: edbd2d6543c975d45a9b2678a2821083, type: 3}
   blank: {fileID: 21300000, guid: edbd2d6543c975d45a9b2678a2821083, type: 3}
   dialogHolder: {fileID: 0}
+  dialogAfterEvent: {fileID: 0}
 --- !u!1 &780146231
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,6 +5469,7 @@ MonoBehaviour:
   dialogueLines:
   - "\u6709\u8840\u8FF9\u7684\u6D17\u624B\u6C60\uFF0C\u65E0\u6CD5\u51FA\u6C34\u3002"
   - "\uFF1F"
+  disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
@@ -5494,6 +5480,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &860368062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6662,6 +6649,7 @@ MonoBehaviour:
   - "\u5373\u4F7F\u662F\u6076\u9B54\uFF0C\u4E5F\u8FD8\u662F\u88AB\u4EBA\u7C7B\u6740\u6B7B\u3002"
   - "\u83AB\u540D\u5176\u5999\u2026\u2026"
   - "\u4E0D\u8981\u6D6A\u8D39\u65F6\u95F4\uFF0C\u8D76\u7D27\u8D70\uFF01"
+  disable: 0
   interact: {fileID: 647674743}
   inzone: 0
   DialogPortraitL:
@@ -6682,6 +6670,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
+  dialogAfterEvent: {fileID: 0}
 --- !u!61 &1010586214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11662,6 +11651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965457466}
   - component: {fileID: 1965457467}
+  - component: {fileID: 1965457468}
   m_Layer: 0
   m_Name: Wooden
   m_TagString: Untagged
@@ -11730,6 +11720,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1965457468
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965457465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000015258789, y: -0.6476846}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7, y: 1.76}
+    newSize: {x: 0.7, y: 1.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.83498824, y: 0.51980346}
+  m_EdgeRadius: 0
 --- !u!1 &1971155208
 GameObject:
   m_ObjectHideFlags: 0

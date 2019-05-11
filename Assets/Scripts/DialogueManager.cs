@@ -29,6 +29,9 @@ public class DialogueManager : MonoBehaviour {
     //enforced event control
     public DialogHolder dialogHolder;
 
+    //post-dialog control
+    public DialogHolder dialogAfterEvent;
+
     // Use this for initialization
     void Start () {        
         thePlayer = FindObjectOfType<playercontroller>();
@@ -40,6 +43,8 @@ public class DialogueManager : MonoBehaviour {
         {
             currentLine++;
         }
+
+        //finish dialog
         if (currentLine >= dialogLines.Length)
         {
             dBox.SetActive(false);
@@ -71,12 +76,12 @@ public class DialogueManager : MonoBehaviour {
                             .addInfo(info);
                         break;
                 }
-            }
-
+            }            
+            
             //if is an enforced event, destroy event after finish
             if (dialogHolder.isEnforcedEvent)
             {
-                Destroy(dialogHolder);
+                dialogHolder.GetComponent<DialogHolder>().disable=true;
             }
         }
     
