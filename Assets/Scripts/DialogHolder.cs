@@ -55,6 +55,8 @@ public class DialogHolder : MonoBehaviour {
                         dMAn.info = interact.GetComponent<Interact>().info;
                         dMAn.triggered = interact.GetComponent<Interact>().triggered;
                         interact.GetComponent<Interact>().triggered = true;
+
+                        Destroy(interact.GetComponent<Interact>().ui);
                     }
                 }
 
@@ -62,6 +64,8 @@ public class DialogHolder : MonoBehaviour {
                 dMAn.imageL = DialogPortraitL;
                 dMAn.imageR = DialogPortraitR;
                 inzone = false;
+
+                
             }
         }
     }

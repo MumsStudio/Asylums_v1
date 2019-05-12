@@ -10,4 +10,11 @@ public class Interact : MonoBehaviour {
     public Info info;
     public int eventNum;
     public bool triggered;
+
+    public GameObject ui;
+
+    public void destroyEvent()
+    {
+        ui.SetActive(false);
+    }
 }
