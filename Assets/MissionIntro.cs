@@ -7,12 +7,13 @@ public class MissionIntro : MonoBehaviour {
     
     public Text myText;
     public EnforcedEvent EEvent;
+    public MissionVariables mv;
     //change the text to next mission
     public void changeText()
     {
         if(EEvent.jobdone == true){
             //Debug.Log("11111111111");
-            myText.text = "Check other rooms.";
+            myText.text = mv.nextMission;
         }
         
 
