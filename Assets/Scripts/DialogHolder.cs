@@ -22,6 +22,10 @@ public class DialogHolder : MonoBehaviour {
 
     //for post-conversation controll
     public DialogHolder dialogAfterEvent;
+    //event after enforced event code
+    public int eventAfterEnforecedEvent;
+    private const int doNothing = 0;
+    private const int saveGame = 1;
 
     void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
@@ -63,9 +67,7 @@ public class DialogHolder : MonoBehaviour {
                 dMAn.ShowBox();
                 dMAn.imageL = DialogPortraitL;
                 dMAn.imageR = DialogPortraitR;
-                inzone = false;
-
-                
+                inzone = false;                
             }
         }
     }

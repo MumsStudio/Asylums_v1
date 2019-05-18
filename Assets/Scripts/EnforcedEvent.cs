@@ -18,16 +18,15 @@ public class EnforcedEvent : MonoBehaviour {
         }
     }
     private void OnTriggerExit2D(Collider2D colli)
-    {
+    {        
         if (eventDialog.disable)
         {
-            Debug.Log("exit zone after enforced event");
+            //Debug.Log("exit zone after enforced event");
             //call to awake next dialog
             if(eventDialog.isEnforcedEvent && eventDialog.disable)
             {
                 eventDialog.dialogAfterEvent.gameObject.SetActive(true);
-            }
-                
+            }                
         }
     }
 }

@@ -15,6 +15,10 @@ public class DialogueManager : MonoBehaviour {
     public Item item;
     public Info info;
     public bool triggered;
+    private const int noInteract=0;
+    private const int takeItem = 1;
+    private const int takeImportantItem = 2;
+    private const int takeInfo = 3;
 
     private playercontroller thePlayer;
 
@@ -31,6 +35,10 @@ public class DialogueManager : MonoBehaviour {
 
     //post-dialog control
     public DialogHolder dialogAfterEvent;
+    //event after enforced event code
+    private playercontroller player;
+    private const int doNothing = 0;
+    private const int saveGame = 1;
 
     // Use this for initialization
     void Start () {        
@@ -58,22 +66,26 @@ public class DialogueManager : MonoBehaviour {
             {
                 switch (interact)
                 {
+                    case noInteract:
+                        break;
                     //code 1 as take item
-                    case 1:
+                    case takeItem:
                         //find backpack, and add item to back pack
                         GameObject.FindGameObjectWithTag("Player")
                             .GetComponentInChildren<Backpack>()
                             .addToBackpack(item);
                         break;
                     //code 2 as take important item
-                    case 2:
+                    case takeImportantItem:
                         break;
                     //code 3 as take info
-                    default:
-                        //put info into database, save if no duplicate
+                    case takeInfo:
+                    //put info into database, save if no duplicate
                         GameObject.FindGameObjectWithTag("Player")
                             .GetComponentInChildren<Backpack>()
                             .addInfo(info);
+                        break;
+                    default:                        
                         break;
                 }
             }            
@@ -83,8 +95,21 @@ public class DialogueManager : MonoBehaviour {
             {
                 dialogHolder.GetComponent<DialogHolder>().disable=true;
             }
-        }
-    
+
+            // if save is needed
+            if (dialogHolder.eventAfterEnforecedEvent != 0)
+            {
+                switch (dialogHolder.eventAfterEnforecedEvent)
+                {
+                    case doNothing: break;
+                    //save game
+                    case saveGame:
+                        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
+                        player.PlayerSaveData();
+                        break;
+                }
+            }
+        }    
         dText.text = dialogLines[currentLine];
 
         //add picture
