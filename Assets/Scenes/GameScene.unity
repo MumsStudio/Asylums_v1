@@ -7013,6 +7013,7 @@ MonoBehaviour:
   myText: {fileID: 1083903620}
   EEvent: {fileID: 757058849}
   mv: {fileID: 11400000, guid: 8708cce5a38d91e4f8837dfac2efcd2a, type: 2}
+  NextMv: {fileID: 11400000, guid: 7b04948276bfba947b882145eccc6541, type: 2}
 --- !u!1 &1103957411
 GameObject:
   m_ObjectHideFlags: 0
