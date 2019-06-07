@@ -3158,6 +3158,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &614385171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614385172}
+  - component: {fileID: 614385173}
+  m_Layer: 0
+  m_Name: Database
+  m_TagString: DB
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &614385172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614385171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1065924282}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &614385173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614385171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02870d99de7061e4592f3d960ae652fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDB:
+  - id: 1
+    item: {fileID: 11400000, guid: 9ce11e7084aeee84a9f07bbfb4d74122, type: 2}
+  - id: 2
+    item: {fileID: 11400000, guid: aa39fd95dc4c40b4dbeb69711351e1db, type: 2}
+  infoDB:
+  - id: 0
+    Infordb: {fileID: 11400000, guid: f4e3685516648a14f9518f763cbe41e2, type: 2}
+  - id: 1
+    Infordb: {fileID: 11400000, guid: c036faf94c704024daa9dd7cd7b0149e, type: 2}
+  eventDB: []
 --- !u!1 &619535516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6864,7 +6915,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 614385172}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7599,9 +7651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e48ac809568fd49ab90327dadd4ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  infoDB: []
-  eventsDone: []
+  items: 
+  infoDB: 
+  eventsDone: 
   roomExplored: []
   pop: {fileID: 1503362270}
 --- !u!1 &1333666325
@@ -10599,9 +10651,9 @@ MonoBehaviour:
     position:
       x: 0
       y: 0
-    items: []
-    infoDB: []
-    eventsDone: []
+    items: 
+    infoDB: 
+    eventsDone: 
     roomExplored: []
   canMove: 1
 --- !u!95 &1776335572

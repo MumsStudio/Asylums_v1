@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PopUpMsg
   - backpack
+  - DB
   layers:
   - Default
   - TransparentFX

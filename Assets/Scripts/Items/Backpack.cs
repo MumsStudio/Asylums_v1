@@ -4,51 +4,54 @@ using UnityEngine;
 
 public class Backpack : MonoBehaviour
 {
-    public List<Item> items;
-    public List<Info> infoDB;
-    public List<PlotEvent> eventsDone;
+    public List<int> items;
+    public List<int> infoDB;
+    public List<int> eventsDone;
     public List<string> roomExplored;
     public GameObject pop;
 
     //add item into backpack
-    public void addToBackpack(Item item)
+    public void addToBackpack(int item)
     {
         items.Add(item);
 
         //popup msg needed
-        string msg = item.name+"已被加入背包。";
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+"已被加入背包。";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
     }
 
-    public void removeFromBackpack(Item item)
+    public void removeFromBackpack(int item)
     {
         //remove item from list
+        items.Remove(item);
 
         //popup msg needed
-        string msg = item.name + "已从背包中移除。";
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name + "已从背包中移除。";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
     }
 
-    public void addInfo(Info info)
-    {
-        if (info != null)
+    public void addInfo(int info)
+    {        
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+        //boolean to prevent duplication
+        bool dup = false;
+
+        for (int i = 0; i < infoDB.Count; i++)
         {
-            bool dup = false;
-            for(int i = 0; i < infoDB.Count; i++)
-            {
-                if (infoDB[i].infoId == info.infoId){
-                    dup = true;
-                    break;
-                }
+            if (infoDB[i] == info){
+                dup = true;
+                break;
             }
-            if (!dup)
-            {
-                infoDB.Add(info);
-                //popup msg
-                string msg = "信息已被记入。";
-                pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
-            }
-        }        
+        }
+        if (!dup)
+        {
+            infoDB.Add(info);
+            //popup msg
+            string msg = "信息已被记入。";
+            pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
+        }  
     }
 
     public void addRoomExplored(string roomId)

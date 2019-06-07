@@ -10,9 +10,11 @@ public class LoadItemToItemUI : MonoBehaviour {
 	// Update is called once per frame
 	public void UpdateItemTextBox () {
         string listOfItem = "";
-        foreach(Item item in backpack.GetComponentInChildren<Backpack>().items)
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+
+        foreach (int item in backpack.GetComponentInChildren<Backpack>().items)
         {
-            listOfItem += " " + item.itemName;
+            listOfItem += " " + DB.GetComponent<ItemDatabase>().findItemById(item).item.name;
         }
         itemText.GetComponentInChildren<Text>().text = listOfItem;
 	}

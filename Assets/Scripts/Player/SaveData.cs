@@ -6,9 +6,9 @@ using UnityEngine;
 public class SaveData
 {
     public Position position;
-    public List<Item> items;
-    public List<Info> infoDB;
-    public List<PlotEvent> eventsDone;
+    public List<int> items;
+    public List<int> infoDB;
+    public List<int> eventsDone;
     public List<string> roomExplored;    
 }
 

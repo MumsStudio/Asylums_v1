@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newInfo")]
 public class Info : ScriptableObject
 {
-    public string infoId;
+    public int infoId;
     public string infoTitle;
     public string description;
 }

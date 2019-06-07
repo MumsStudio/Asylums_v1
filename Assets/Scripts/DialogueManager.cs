@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour {
                         //find backpack, and add item to back pack
                         GameObject.FindGameObjectWithTag("Player")
                             .GetComponentInChildren<Backpack>()
-                            .addToBackpack(item);
+                            .addToBackpack(item.itemID);
                         break;
                     //code 2 as take important item
                     case takeImportantItem:
@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour {
                     //put info into database, save if no duplicate
                         GameObject.FindGameObjectWithTag("Player")
                             .GetComponentInChildren<Backpack>()
-                            .addInfo(info);
+                            .addInfo(info.infoId);
                         break;
                     default:                        
                         break;
