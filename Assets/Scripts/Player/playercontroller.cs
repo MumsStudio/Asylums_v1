@@ -133,7 +133,7 @@ public class playercontroller : MonoBehaviour {
         //serialization method to WRITE to the file
         formatter.Serialize(file, data);
         file.Close();
-        Debug.Log("Data Saved.");
+        Debug.Log("Data Saved."); 
         //remeber to set player able to walk back to true
         canMove = true;
     }
