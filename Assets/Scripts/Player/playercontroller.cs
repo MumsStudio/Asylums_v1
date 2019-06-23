@@ -8,13 +8,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class playercontroller : MonoBehaviour {
 
     public float moveSpeed ;
-    public GameObject EscMenue;
-    public GameObject SceneObject;
-    public GameObject PlayerObject;
     public GameObject RoomInitializer;
     public SaveData data;
-
-	private bool playermoving;
+    public GameObject PlayerObject;
+    private bool playermoving;
     private Animator anim;
     private Rigidbody2D myRigidbody;    
 
@@ -60,19 +57,7 @@ public class playercontroller : MonoBehaviour {
         }
         
 		anim.SetBool ("playermoving", playermoving);
-        //ESC keyword active menu
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            EscMenue.SetActive(true);
-            SceneObject.SetActive(false);
-            PlayerObject.SetActive(false);
-        }
-        if (EscMenue.activeSelf&&Input.GetKeyDown(KeyCode.Escape))
-        {
-            EscMenue.SetActive(false);
-            SceneObject.SetActive(true);
-            PlayerObject.SetActive(true);
-        }
+     
         //shift keyword accelerate player 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {    
