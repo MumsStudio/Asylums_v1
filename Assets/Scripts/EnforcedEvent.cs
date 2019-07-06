@@ -25,7 +25,7 @@ public class EnforcedEvent : MonoBehaviour {
             //call to awake next dialog
             if(eventDialog.isEnforcedEvent && eventDialog.disable)
             {
-                eventDialog.dialogAfterEvent.gameObject.SetActive(true);
+                //eventDialog.dialogAfterEvent.gameObject.SetActive(true);
             }                
         }
     }

@@ -21,7 +21,7 @@ public class DialogHolder : MonoBehaviour {
     public bool enforcedEventCalled;
 
     //for post-conversation controll
-    public DialogHolder dialogAfterEvent;
+    //public DialogHolder dialogAfterEvent;
     //event after enforced event code
     public int eventAfterEnforecedEvent;
     private const int doNothing = 0;
@@ -47,7 +47,7 @@ public class DialogHolder : MonoBehaviour {
 
                 //enforced event control
                 dMAn.dialogHolder = this;
-                dMAn.dialogAfterEvent = this.dialogAfterEvent;
+                //dMAn.dialogAfterEvent = this.dialogAfterEvent;
 
                 //interaction control
                 if (interact != null)
@@ -88,7 +88,7 @@ public class DialogHolder : MonoBehaviour {
             if (disable)
             {
                 // post-dialog trigger
-                dialogAfterEvent.gameObject.SetActive(true);
+               // dialogAfterEvent.gameObject.SetActive(true);
             }                
         }
     }

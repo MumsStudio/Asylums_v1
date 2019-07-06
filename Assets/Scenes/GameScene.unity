@@ -770,7 +770,6 @@ MonoBehaviour:
   - {fileID: 0}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
   eventAfterEnforecedEvent: 0
 --- !u!61 &81452617
 BoxCollider2D:
@@ -1140,17 +1139,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - meet wooden
+  - "\u6B22\u8FCE\uFF01"
+  - "\u54E6\uFF0C\u4F60\u539F\u6765\u5728\u8FD9\u91CC\u5440\uFF1F"
+  - "\u9047\u5230\u95EE\u9898\u7684\u8BDD\uFF0C\u968F\u65F6\u6765\u627E\u6211\u3002\u4EC0\u4E48\u4E8B\u60C5\uFF0C\u4E00\u6B21\u505A\u4E0D\u597D\uFF0C\u91CD\u590D\u505A\u4E0D\u5C31\u597D\u4E86\u561B\uFF01 "
   disable: 0
   interact: {fileID: 0}
   inzone: 0
   DialogPortraitL:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   DialogPortraitR:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   - {fileID: 0}
   isEnforcedEvent: 1
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 172549276}
   eventAfterEnforecedEvent: 0
 --- !u!1 &172366434
 GameObject:
@@ -1227,65 +1231,6 @@ Transform:
   m_Father: {fileID: 103190985}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &172549274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 172549275}
-  - component: {fileID: 172549276}
-  m_Layer: 9
-  m_Name: dialogueZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &172549275
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 172549274}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8207486, y: 3.4266117, z: 0}
-  m_LocalScale: {x: 1.6819026, y: 0.7859773, z: 0.76107043}
-  m_Children: []
-  m_Father: {fileID: 1965457466}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &172549276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 172549274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34b35212863e0a14a9b90d12d0282f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueLines:
-  - "\u6B22\u8FCE\uFF01"
-  - "\u54E6\uFF0C\u4F60\u539F\u6765\u5728\u8FD9\u91CC\u5440\uFF1F"
-  - "\u9047\u5230\u95EE\u9898\u7684\u8BDD\uFF0C\u968F\u65F6\u6765\u627E\u6211\u3002\u4EC0\u4E48\u4E8B\u60C5\uFF0C\u4E00\u6B21\u505A\u4E0D\u597D\uFF0C\u91CD\u590D\u505A\u4E0D\u5C31\u597D\u4E86\u561B\uFF01 "
-  disable: 0
-  interact: {fileID: 0}
-  inzone: 0
-  DialogPortraitL:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  DialogPortraitR:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
-  - {fileID: 0}
-  isEnforcedEvent: 1
-  enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
-  eventAfterEnforecedEvent: 0
 --- !u!1 &209673529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2353,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
   eventAfterEnforecedEvent: 0
 --- !u!61 &499674190
 BoxCollider2D:
@@ -3318,7 +3262,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
   eventAfterEnforecedEvent: 0
 --- !u!61 &630927520
 BoxCollider2D:
@@ -3471,7 +3414,6 @@ GameObject:
   - component: {fileID: 683820179}
   - component: {fileID: 683820178}
   - component: {fileID: 683820181}
-  - component: {fileID: 683820182}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -3573,20 +3515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startWithActive: 0
---- !u!114 &683820182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683820176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84d581a7b0df7841b08893b15620729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EscMenue: {fileID: 683820176}
-  SceneObject: {fileID: 1484784114}
-  PlayerObject: {fileID: 1776335570}
 --- !u!1 &686307464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,6 +3977,11 @@ MonoBehaviour:
   PMove: {fileID: 1776335571}
   gameScene: {fileID: 1484784114}
   pauseMenuUI: {fileID: 683820176}
+  Menue: {fileID: 1873212379}
+  PlayerInfor: {fileID: 1414490317}
+  Backpack: {fileID: 1536128263}
+  Option: {fileID: 1077503514}
+  GameData: {fileID: 852176485}
 --- !u!114 &714218440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4126,7 +4059,7 @@ Transform:
   m_Children:
   - {fileID: 158977510}
   m_Father: {fileID: 1965457466}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &757058849
 MonoBehaviour:
@@ -4153,7 +4086,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2539299, y: -0.5044022}
+  m_Offset: {x: 2.2599638, y: -0.5044022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4164,7 +4097,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7566819, y: 0.5354271}
+  m_Size: {x: 0.9874028, y: 0.5354271}
   m_EdgeRadius: 0
 --- !u!1 &775894062
 GameObject:
@@ -5529,7 +5462,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
   eventAfterEnforecedEvent: 0
 --- !u!61 &860368062
 BoxCollider2D:
@@ -6720,7 +6652,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54e71c66469dc764a9dd4941f661c76d, type: 3}
   isEnforcedEvent: 0
   enforcedEventCalled: 0
-  dialogAfterEvent: {fileID: 0}
   eventAfterEnforecedEvent: 0
 --- !u!61 &1010586214
 BoxCollider2D:
@@ -11743,7 +11674,6 @@ GameObject:
   - component: {fileID: 1965457466}
   - component: {fileID: 1965457467}
   - component: {fileID: 1965457468}
-  - component: {fileID: 1965457469}
   m_Layer: 0
   m_Name: Wooden
   m_TagString: Untagged
@@ -11761,7 +11691,6 @@ Transform:
   m_LocalPosition: {x: -5.47, y: -3.25, z: 1}
   m_LocalScale: {x: 0.87219375, y: 0.8535826, z: 1}
   m_Children:
-  - {fileID: 172549275}
   - {fileID: 757058848}
   m_Father: {fileID: 831527955}
   m_RootOrder: 1
@@ -11824,7 +11753,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12510318, y: -0.4933132}
+  m_Offset: {x: 0.003654778, y: -0.36921683}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11835,21 +11764,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7981125, y: 1.2274377}
+  m_Size: {x: 0.5552157, y: 0.9792449}
   m_EdgeRadius: 0
---- !u!114 &1965457469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965457465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da43038ae8e0f04785a34940f5e87ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventDialog: {fileID: 172549276}
-  jobdone: 0
 --- !u!1 &1971155208
 GameObject:
   m_ObjectHideFlags: 0
