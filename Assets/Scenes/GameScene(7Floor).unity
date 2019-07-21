@@ -2869,9 +2869,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -16.524048, y: -1.8308715}
       - {x: -16.546692, y: -0.073944114}
-      - {x: -17.936338, y: -0.06842034}
-      - {x: -17.950562, y: -5.0448914}
-      - {x: 0.9862064, y: -5.023895}
+      - {x: -18.100342, y: -0.06842034}
+      - {x: -18.081787, y: -5.766632}
+      - {x: 1.051819, y: -5.811249}
       - {x: 0.9301146, y: -1.8927611}
 --- !u!1 &583029439
 GameObject:
@@ -3925,7 +3925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &714218435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10229,8 +10229,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 195974195
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dacec4326917ae544a567c58f29978cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
