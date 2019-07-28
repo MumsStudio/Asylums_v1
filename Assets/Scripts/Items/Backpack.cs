@@ -10,6 +10,14 @@ public class Backpack : MonoBehaviour
     public List<string> roomExplored;
     public GameObject pop;
 
+    void Start()
+    {
+        items = carryDataBetwScreen.Instance.items;
+        infoDB = carryDataBetwScreen.Instance.infoDB;
+        eventsDone = carryDataBetwScreen.Instance.eventsDone;
+        roomExplored = carryDataBetwScreen.Instance.roomExplored;
+    }
+
     //add item into backpack
     public void addToBackpack(int item)
     {
@@ -70,4 +78,14 @@ public class Backpack : MonoBehaviour
         }
         return false;
     }
+
+    //Save data to global control
+    public void SavePlayer()
+    {
+        carryDataBetwScreen.Instance.items = items;
+        carryDataBetwScreen.Instance.infoDB = infoDB;
+        carryDataBetwScreen.Instance.eventsDone = eventsDone;
+        carryDataBetwScreen.Instance.roomExplored = roomExplored;
+    }
+
 }
