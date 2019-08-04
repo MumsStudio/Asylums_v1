@@ -10,6 +10,7 @@ public class Backpack : MonoBehaviour
     public List<string> roomExplored;
     public GameObject pop;
 
+    //load itmes from globalObejct first 
     void Start()
     {
         items = carryDataBetwScreen.Instance.items;
