@@ -34,6 +34,11 @@ public class NPCMovement : MonoBehaviour {
                 movingRight = true;
             }
         }
+        //test collider parent if is corrider
+        //else if (WallInfo.collider.transform.parent == notwall)
+        //{
+        //    Debug.Log(WallInfo.collider.transform.parent);
+        //}
 
     }
 }
