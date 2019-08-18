@@ -10,6 +10,8 @@ public class carryDataBetwScreen : MonoBehaviour {
     public List<int> infoDB;
     public List<int> eventsDone;
     public List<string> roomExplored;
+    public Vector3 posM = new Vector3(568, 337, 0);
+
 
     void Awake()
     {

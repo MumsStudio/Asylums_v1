@@ -7,7 +7,7 @@ public class EnforcedEvent : MonoBehaviour {
     //enforced event is called once player entered the trigger zone, and destroyed once done
     public DialogHolder eventDialog;
     public NPCMovement Wooden;
-    public float tempValue;
+    public playercontroller player;
     public bool jobdone;
 
     private void OnTriggerEnter2D(Collider2D colli)
@@ -15,9 +15,8 @@ public class EnforcedEvent : MonoBehaviour {
         //if collid with player start display dialog
         if (colli.gameObject.tag.Contains("Player"))
         {
+            Wooden.speed = 2;
             eventDialog.enforcedEventCalled = true;
-            tempValue = Wooden.speed;
-            Wooden.speed = 0;
             jobdone = true;
         }
     }
@@ -25,7 +24,7 @@ public class EnforcedEvent : MonoBehaviour {
     {        
         if (eventDialog.disable)
         {
-            Wooden.speed = tempValue;
+            Wooden.speed = 2;
             Debug.Log("exit zone after enforced event");
             //call to awake next dialog
             if (eventDialog.isEnforcedEvent && eventDialog.disable)

@@ -13,12 +13,20 @@ public class playercontroller : MonoBehaviour {
     public GameObject PlayerObject;
     private bool playermoving;
     private Animator anim;
-    private Rigidbody2D myRigidbody;    
-
+    private Rigidbody2D myRigidbody;
     public bool canMove;
 
-	// Use this for initialization
-	void Start () {
+    Vector3 pos1 = new Vector3(568, 337, 0);
+
+    public int index;
+
+    // Use this for initialization
+    void Start () {
+       if (index==2)
+        {
+            PlayerObject.transform.position = carryDataBetwScreen.Instance.posM;
+        }
+
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
@@ -27,7 +35,7 @@ public class playercontroller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		playermoving = false;
-
+        
         if (!canMove)
         {
             myRigidbody.velocity = Vector2.zero;
@@ -140,5 +148,13 @@ public class playercontroller : MonoBehaviour {
 
         //remeber to set player able to walk back to true
         canMove = true;
+    }
+
+    public void SavePlayer()
+    {
+        if (index ==1)
+        {
+            carryDataBetwScreen.Instance.posM = pos1;
+        }
     }
 }

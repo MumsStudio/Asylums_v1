@@ -11,10 +11,17 @@ public class LevelControl : MonoBehaviour
     public string levelName;
     public int index;
     public bool loop;
+    public GameObject player;
+    public Vector3 pos;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (index == 1)
+        {
+            player.transform.position = pos;
+        }
+
         if (collision.CompareTag("Player"))
         {
             if (loop == false)
@@ -24,6 +31,8 @@ public class LevelControl : MonoBehaviour
 
                 //load level with scene name
                 SceneManager.LoadScene(levelName);
+
+                
             }
 
             //loop
