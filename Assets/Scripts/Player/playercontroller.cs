@@ -16,17 +16,16 @@ public class playercontroller : MonoBehaviour {
     private Rigidbody2D myRigidbody;
     public bool canMove;
 
-    Vector3 pos1 = new Vector3(568, 337, 0);
-
-    public int index;
+    //Vector3 pos1 = new Vector3(568, 337, 0);
+    //public int index;
 
     // Use this for initialization
     void Start () {
         //get data form global
-       if (index==2)
-        {
-            PlayerObject.transform.position = carryDataBetwScreen.Instance.posM;
-        }
+       //if (index==2)
+       // {
+       //     PlayerObject.transform.position = carryDataBetwScreen.Instance.posM;
+       // }
        
 
         anim = GetComponent<Animator>();
@@ -152,11 +151,12 @@ public class playercontroller : MonoBehaviour {
         canMove = true;
     }
 
-    public void SavePlayer()
-    {
-        if (index ==1)
-        {
-            carryDataBetwScreen.Instance.posM = pos1;
-        }
-    }
+    //public void SavePlayer()
+    //{
+    //    if (index ==1)
+    //    {
+    //        carryDataBetwScreen.Instance.posM = new Vector3(0, 0, 0);
+    //        carryDataBetwScreen.Instance.posM = pos1;
+    //    }
+    //}
 }

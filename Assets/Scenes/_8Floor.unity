@@ -2638,7 +2638,6 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 575665322}
   canMove: 1
-  index: 1
 --- !u!95 &575665326
 Animator:
   serializedVersion: 3
@@ -8945,7 +8944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: GameScene(7Floor)
-  index: 1
+  index: 2
   loop: 0
   player: {fileID: 575665322}
   pos: {x: 0, y: 0, z: 0}

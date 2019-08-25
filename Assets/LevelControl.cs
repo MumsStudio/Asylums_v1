@@ -13,14 +13,22 @@ public class LevelControl : MonoBehaviour
     public bool loop;
     public GameObject player;
     public Vector3 pos;
+    Vector3 pos1 = new Vector3(568, 337, 0);
+
+    public void Start()
+    {
+        //get data form global
+        if (index==1)
+         {
+            player.transform.position = carryDataBetwScreen.Instance.posM;
+         }
+        
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (index == 1)
-        {
-            player.transform.position = pos;
-        }
+
 
         if (collision.CompareTag("Player"))
         {
@@ -32,7 +40,7 @@ public class LevelControl : MonoBehaviour
                 //load level with scene name
                 SceneManager.LoadScene(levelName);
 
-                
+
             }
 
             //loop
@@ -42,5 +50,20 @@ public class LevelControl : MonoBehaviour
             }
         }
 
+        if (index == 1) {
+            carryDataBetwScreen.Instance.posM = pos1;
+        }
+        
+    
+
     }
+
+    /*public void SavePlayer()
+    {
+        if (index ==2)
+       {
+           carryDataBetwScreen.Instance.posM = new Vector3(0, 0, 0);
+           carryDataBetwScreen.Instance.posM = pos1;
+       }
+    }*/
 }
