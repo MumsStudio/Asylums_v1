@@ -22,10 +22,12 @@ public class playercontroller : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //get data form global
        if (index==2)
         {
             PlayerObject.transform.position = carryDataBetwScreen.Instance.posM;
         }
+       
 
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
