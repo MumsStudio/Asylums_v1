@@ -10504,7 +10504,6 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 1776335570}
   canMove: 1
-  index: 2
 --- !u!95 &1776335572
 Animator:
   serializedVersion: 3
@@ -11722,7 +11721,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventDialog: {fileID: 1498255934}
   Wooden: {fileID: 1965457469}
-  tempValue: 0
 --- !u!1 &1971155208
 GameObject:
   m_ObjectHideFlags: 0

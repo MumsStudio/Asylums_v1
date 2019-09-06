@@ -24,13 +24,8 @@ public class EnforcedEvent : MonoBehaviour {
     {        
         if (eventDialog.disable)
         {
-            Wooden.speed = 2;
-            Debug.Log("exit zone after enforced event");
-            //call to awake next dialog
-            if (eventDialog.isEnforcedEvent && eventDialog.disable)
-            {
-                //eventDialog.dialogAfterEvent.gameObject.SetActive(true);
-            }                
+            Wooden.speed = 0;
+            Debug.Log("exit zone after enforced event");                 
         }
     }
 }
