@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour {
                         break;
                     //code 3 as take info
                     case takeInfo:
-                    //put info into database, save if no duplicate
+                        //put info into database, save if no duplicate
                         GameObject.FindGameObjectWithTag("Player")
                             .GetComponentInChildren<Backpack>()
                             .addInfo(info.infoId);

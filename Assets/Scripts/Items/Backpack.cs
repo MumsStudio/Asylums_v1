@@ -47,6 +47,7 @@ public class Backpack : MonoBehaviour
         //boolean to prevent duplication
         bool dup = false;
 
+        Debug.Log(DB);
         for (int i = 0; i < infoDB.Count; i++)
         {
             if (infoDB[i] == info){
@@ -59,6 +60,7 @@ public class Backpack : MonoBehaviour
             infoDB.Add(info);
             //popup msg
             string msg = "信息已被记入。";
+            Debug.Log(msg);
             pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
         }  
     }
