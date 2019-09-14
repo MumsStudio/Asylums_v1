@@ -7,6 +7,7 @@ TagManager:
   - PopUpMsg
   - backpack
   - DB
+  - NPCpositon
   layers:
   - Default
   - TransparentFX

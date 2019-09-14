@@ -12,7 +12,8 @@ public class NPC_collide_Player : MonoBehaviour {
         //if collid with player start display dialog
         if (colli.gameObject.tag.Contains("Player"))
         {
-            Wooden.speed = 0;
+
+           // Wooden.speed = 0;
         }
     }
     

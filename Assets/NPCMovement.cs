@@ -10,35 +10,28 @@ public class NPCMovement : MonoBehaviour {
 
     public Transform WallDetection;
 
-    public Transform notwall;
+    //public Transform notwall;
 
     private void Update()
     {
         //move code
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-        RaycastHit2D WallInfo = Physics2D.Raycast(WallDetection.position, Vector2.right, 2f);
-        //change direction when hit the wall
-        if (WallInfo.collider.transform.parent != notwall)
+    }
+    private void OnTriggerEnter2D(Collider2D colli)
+    {
+        //if collid with player start display dialog
+        if (colli.gameObject.tag.Contains("Player"))
         {
-            Debug.Log(WallInfo.collider.transform.parent);
-            
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
+            speed = 0;
+            Debug.Log("player");
         }
-        //test collider parent if is corrider
-        //else if (WallInfo.collider.transform.parent == notwall)
-        //{
-        //    Debug.Log(WallInfo.collider.transform.parent);
-        //}
+       
 
+    }
+    private void OnTriggerExit2D(Collider2D colli)
+    {
+        transform.eulerAngles = new Vector3(0, -180, 0);
+        speed = 2;
+        
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnforcedEvent : MonoBehaviour {
 
     //enforced event is called once player entered the trigger zone, and destroyed once done
+    public GameObject ForceEventZone;
     public DialogHolder eventDialog;
     public NPCMovement Wooden;
     public playercontroller player;
@@ -24,8 +25,8 @@ public class EnforcedEvent : MonoBehaviour {
     {        
         if (eventDialog.disable)
         {
-            Wooden.speed = 0;
-            Debug.Log("exit zone after enforced event");                 
+            Debug.Log("exit zone after enforced event");
+            ForceEventZone.SetActive(false);
         }
     }
 }
