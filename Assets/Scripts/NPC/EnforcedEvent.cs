@@ -25,7 +25,7 @@ public class EnforcedEvent : MonoBehaviour {
     {        
         if (eventDialog.disable)
         {
-            Debug.Log("exit zone after enforced event");
+            //Debug.Log("exit zone after enforced event");
             ForceEventZone.SetActive(false);
         }
     }

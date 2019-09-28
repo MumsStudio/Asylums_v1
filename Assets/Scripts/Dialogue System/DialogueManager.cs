@@ -37,8 +37,11 @@ public class DialogueManager : MonoBehaviour {
     public DialogHolder dialogAfterEvent;
     //event after enforced event code
     private playercontroller player;
-    private const int doNothing = 0;
-    private const int saveGame = 1;
+    private const int DO_NOTHING = 0;
+    private const int SAVE_GAME = 1;
+
+    //Pop up
+    public GameObject popup;
 
     // Use this for initialization
     void Start () {        
@@ -101,9 +104,11 @@ public class DialogueManager : MonoBehaviour {
             {
                 switch (dialogHolder.eventAfterEnforecedEvent)
                 {
-                    case doNothing: break;
+                    case DO_NOTHING: break;
                     //save game
-                    case saveGame:
+                    case SAVE_GAME:
+                        string msg = "Wooden has wrote a note.";
+                        this.popup.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
                         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
                         player.PlayerSaveData();
                         break;

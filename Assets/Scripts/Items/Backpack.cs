@@ -26,7 +26,7 @@ public class Backpack : MonoBehaviour
 
         //popup msg needed
         GameObject DB = GameObject.FindGameObjectWithTag("DB");
-        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+"已被加入背包。";
+        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+" has been added to the backpack.";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
     }
 
@@ -37,7 +37,7 @@ public class Backpack : MonoBehaviour
 
         //popup msg needed
         GameObject DB = GameObject.FindGameObjectWithTag("DB");
-        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name + "已从背包中移除。";
+        string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name + " has been removed from the backpack.";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
     }
 
@@ -59,7 +59,7 @@ public class Backpack : MonoBehaviour
         {
             infoDB.Add(info);
             //popup msg
-            string msg = "信息已被记入。";
+            string msg = "Information has been recorded.";
             Debug.Log(msg);
             pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
         }  

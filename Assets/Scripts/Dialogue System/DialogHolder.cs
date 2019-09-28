@@ -24,8 +24,8 @@ public class DialogHolder : MonoBehaviour {
     //public DialogHolder dialogAfterEvent;
     //event after enforced event code
     public int eventAfterEnforecedEvent;
-    private const int doNothing = 0;
-    private const int saveGame = 1;
+    private const int DO_NOTHING = 0;
+    private const int SAVE_GAME = 1;
 
     void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
@@ -47,7 +47,6 @@ public class DialogHolder : MonoBehaviour {
 
                 //enforced event control
                 dMAn.dialogHolder = this;
-                //dMAn.dialogAfterEvent = this.dialogAfterEvent;
 
                 //interaction control
                 if (interact != null)
