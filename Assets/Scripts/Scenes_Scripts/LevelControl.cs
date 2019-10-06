@@ -13,6 +13,7 @@ public class LevelControl : MonoBehaviour
     public bool loop;
     public GameObject player;
     public Vector3 pos;
+    public Camera cam;
     Vector3 pos1 = new Vector3(568, 337, 0);
 
     public void Start()
@@ -21,15 +22,12 @@ public class LevelControl : MonoBehaviour
         if (index==1)
          {
             player.transform.position = carryDataBetwScreen.Instance.posM;
-         }
-        
+            cam.transform.position = carryDataBetwScreen.Instance.camPos;
+        }
     }
-
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
         if (collision.CompareTag("Player"))
         {
             if (loop == false)
@@ -52,10 +50,8 @@ public class LevelControl : MonoBehaviour
 
         if (index == 1) {
             carryDataBetwScreen.Instance.posM = pos1;
+            carryDataBetwScreen.Instance.camPos = cam.transform.position;
         }
-        
-    
-
     }
 
     /*public void SavePlayer()

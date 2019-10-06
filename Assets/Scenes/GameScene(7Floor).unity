@@ -1333,6 +1333,7 @@ MonoBehaviour:
   loop: 0
   player: {fileID: 1776335570}
   pos: {x: 25, y: 42, z: 1}
+  cam: {fileID: 519420031}
 --- !u!61 &221138171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9624,6 +9625,7 @@ MonoBehaviour:
   eventsDone: 
   roomExplored: []
   posM: {x: 579, y: 337, z: 0}
+  camPos: {x: 578, y: 336, z: -1}
 --- !u!4 &1635624925
 Transform:
   m_ObjectHideFlags: 0

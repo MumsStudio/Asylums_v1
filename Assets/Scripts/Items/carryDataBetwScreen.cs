@@ -11,6 +11,7 @@ public class carryDataBetwScreen : MonoBehaviour {
     public List<int> eventsDone;
     public List<string> roomExplored;
     public Vector3 posM;
+    public Vector3 camPos;
 
 
     void Awake()
