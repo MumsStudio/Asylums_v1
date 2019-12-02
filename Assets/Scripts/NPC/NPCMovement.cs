@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour {
 
     public float speed;
-    private bool movingRight = true;
+    public bool movingRight = true;
     public bool NpcCanMove;
     //public GameObject player;
     public float horizontalInput;
