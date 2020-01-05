@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour {
 
     public float speed;
-    public bool movingRight = true;
+    public bool movingRight;
     public bool NpcCanMove;
     //public GameObject player;
     public float horizontalInput;
@@ -15,7 +15,14 @@ public class NPCMovement : MonoBehaviour {
     {
         //movement code
         //transform.position = player.transform.position;
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (!movingRight)
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+        else { transform.Translate(Vector2.right * speed * Time.deltaTime); }
+        
+
+
     }
     private void OnTriggerEnter2D(Collider2D colli)
     {
