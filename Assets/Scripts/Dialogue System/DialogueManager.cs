@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -107,10 +107,9 @@ public class DialogueManager : MonoBehaviour {
                     case DO_NOTHING: break;
                     //save game
                     case SAVE_GAME:
-                        string msg = "Wooden has wrote a note.";
-                        this.popup.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
-                        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
-                        player.PlayerSaveData();
+                        // instead of just call save function, call desicion box
+                        GameObject desicion = GameObject.FindGameObjectWithTag("DecisionManager");
+                        desicion.GetComponentInChildren<DecisionManage>().saveDecision();
                         break;
                 }
             }
