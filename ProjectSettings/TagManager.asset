@@ -8,6 +8,8 @@ TagManager:
   - backpack
   - DB
   - NPCpositon
+  - DecisionManager
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
