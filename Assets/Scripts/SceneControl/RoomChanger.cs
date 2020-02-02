@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomChanger : MonoBehaviour {
-    public GameObject player;
+    private GameObject player;
     public GameObject room;
 
     private void Start()
     {
+        this.player = GameObject.FindGameObjectWithTag("Player");
         InitializeRoomState();        
     }
 
