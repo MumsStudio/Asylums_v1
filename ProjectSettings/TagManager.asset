@@ -10,6 +10,7 @@ TagManager:
   - NPCpositon
   - DecisionManager
   - MainCanvas
+  - ChangeLevel
   layers:
   - Default
   - TransparentFX

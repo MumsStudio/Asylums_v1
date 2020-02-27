@@ -18,29 +18,28 @@ public class LevelControl : MonoBehaviour
 
     public void Start()
     {
-        //get data form global
+        //get data from global
         if (index==1)
          {
             player.transform.position = carryDataBetwScreen.Instance.posM;
             cam.transform.position = carryDataBetwScreen.Instance.camPos;
         }
+       
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             if (loop == false)
             {
-                //load level with buikd index
-                SceneManager.LoadScene(index);
+                //load level with build index
+                //SceneManager.LoadScene(index);
 
                 //load level with scene name
+                carryDataBetwScreen.prevScene = SceneManager.GetActiveScene().name;
                 SceneManager.LoadScene(levelName);
-
-
             }
-
             //loop
             if (loop == true)
             {

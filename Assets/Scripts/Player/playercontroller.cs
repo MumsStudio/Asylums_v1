@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class playercontroller : MonoBehaviour {
 
-    public float moveSpeed ;
+    public float moveSpeed;
     public GameObject RoomInitializer;
     public SaveData data;
     public GameObject PlayerObject;
@@ -31,7 +31,9 @@ public class playercontroller : MonoBehaviour {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
-	}
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
