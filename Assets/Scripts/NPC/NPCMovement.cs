@@ -30,7 +30,7 @@ public class NPCMovement : MonoBehaviour {
         if (colli.gameObject.tag.Contains("Player")&& NpcCanMove)
         {
             speed = 0;
-            Debug.Log("player");
+            //Debug.Log("player");
 
         }
         else if(!NpcCanMove)
