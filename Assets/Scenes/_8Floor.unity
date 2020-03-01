@@ -1765,6 +1765,9 @@ MonoBehaviour:
   box: {fileID: 413880788}
   decisionDecription: {fileID: 1642045299}
   popup: {fileID: 828069276}
+  opt1Bt: {fileID: 0}
+  opt2Bt: {fileID: 0}
+  opt3Bt: {fileID: 0}
 --- !u!1 &289031156
 GameObject:
   m_ObjectHideFlags: 0

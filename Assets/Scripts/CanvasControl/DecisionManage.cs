@@ -29,12 +29,12 @@ public class DecisionManage : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        setActiveDecisionBox();
         canvas = GameObject.FindGameObjectWithTag("MainCanvas");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log(player.name);
         this.player = player.GetComponentInChildren<playercontroller>();
         Debug.Log(this.player.name);
+        setActiveDecisionBox();
     }
 
     // set decision box active/deactive
