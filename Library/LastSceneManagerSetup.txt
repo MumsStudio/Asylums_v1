@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/_8FB.unity
+- path: Assets/Scenes/GameScene(7Floor).unity
   isLoaded: 1
   isActive: 1

@@ -31,16 +31,20 @@ public class DecisionManage : MonoBehaviour
     {
         canvas = GameObject.FindGameObjectWithTag("MainCanvas");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player.name);
         this.player = player.GetComponentInChildren<playercontroller>();
-        Debug.Log(this.player.name);
+        // add listener to the buttons
+        opt1Bt.GetComponentInChildren<Button>().onClick.AddListener(() => option1BtOnClick());
+        opt2Bt.GetComponentInChildren<Button>().onClick.AddListener(() => option2BtOnClick());
+        opt3Bt.GetComponentInChildren<Button>().onClick.AddListener(() => option3BtOnClick());
+
         setActiveDecisionBox();
+
     }
 
     // set decision box active/deactive
     public void setActiveDecisionBox()
     {
-        Debug.Log(player.name);
+        Debug.Log(box.activeSelf);
         box.SetActive(!box.activeSelf);
         // player controller stop/continue during desicion making
         player.canMove = !box.activeSelf;
@@ -49,7 +53,7 @@ public class DecisionManage : MonoBehaviour
     // option1 for desicion
     public void option1BtOnClick()
     {
-        //Debug.Log("opt1");
+        Debug.Log("opt1");
         // save function choice
         switch (choiceOption)
         {
@@ -58,6 +62,7 @@ public class DecisionManage : MonoBehaviour
                 this.saveFunctionConfirmed();
                 break;
         }
+        Debug.Log("close dbox by op1 bt");
         setActiveDecisionBox();
     }
 
@@ -72,13 +77,13 @@ public class DecisionManage : MonoBehaviour
             case SAVE:
                 break;
         }
+        Debug.Log("close dbox by op2 bt");
         setActiveDecisionBox();
     }
 
     // option3
     public void option3BtOnClick()
     {
-        Debug.Log("opt3");
         // save function choice
         switch (choiceOption)
         {
@@ -89,6 +94,7 @@ public class DecisionManage : MonoBehaviour
                 this.popup.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
                 break;
         }
+        Debug.Log("close dbox by op3 bt");
         setActiveDecisionBox();
     }
 
