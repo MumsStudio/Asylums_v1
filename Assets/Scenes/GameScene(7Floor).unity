@@ -918,7 +918,7 @@ MonoBehaviour:
   box: {fileID: 1343609929}
   decisionDecription: {fileID: 1561425405}
   popup: {fileID: 1503362270}
-  opt1Bt: {fileID: 1786602321}
+  opt1Bt: {fileID: 466989847}
   opt2Bt: {fileID: 1786602321}
   opt3Bt: {fileID: 447148108}
 --- !u!1 &103190984
