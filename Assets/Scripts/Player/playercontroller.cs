@@ -16,6 +16,8 @@ public class playercontroller : MonoBehaviour {
     private Rigidbody2D myRigidbody;
     public bool canMove;
 
+    private sfxManage sfxman;
+
     //Vector3 pos1 = new Vector3(568, 337, 0);
     //public int index;
 
@@ -32,7 +34,7 @@ public class playercontroller : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
 
-
+        sfxman = FindObjectOfType<sfxManage>();
     }
 	
 	// Update is called once per frame
@@ -73,10 +75,12 @@ public class playercontroller : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {    
             moveSpeed = 2.4f;
+            sfxman.footstep.Play();
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = 0.8f;
+            sfxman.monster.Play();
         }
 
     }

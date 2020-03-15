@@ -7,6 +7,8 @@ public class DialogHolder : MonoBehaviour {
     public string[] dialogueLines;
     public bool disable;
 
+    private sfxManage sfxman;
+
     //value to control access
     public GameObject interact;
 
@@ -30,6 +32,8 @@ public class DialogHolder : MonoBehaviour {
     void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
         enforcedEventCalled = false;
+
+        sfxman = FindObjectOfType<sfxManage>();
     }
 
     // Update is called once per frame
@@ -42,6 +46,7 @@ public class DialogHolder : MonoBehaviour {
         {
             if (!dMAn.dialogActive)
             {
+
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
 
@@ -51,6 +56,8 @@ public class DialogHolder : MonoBehaviour {
                 //interaction control
                 if (interact != null)
                 {
+                    sfxman.pickItem.Play();
+
                     dMAn.interact = interact.GetComponent<Interact>().interact;
                     if (dMAn.interact != 0)
                     {
