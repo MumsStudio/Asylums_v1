@@ -7,8 +7,6 @@ public class DialogHolder : MonoBehaviour {
     public string[] dialogueLines;
     public bool disable;
 
-    private sfxManage sfxman;
-
     //value to control access
     public GameObject interact;
 
@@ -28,6 +26,9 @@ public class DialogHolder : MonoBehaviour {
     public int eventAfterEnforecedEvent;
     private const int DO_NOTHING = 0;
     private const int SAVE_GAME = 1;
+
+    private sfxManage sfxman;
+    public GameObject toilet;
 
     void Start() {
         dMAn = FindObjectOfType<DialogueManager>();
@@ -69,6 +70,7 @@ public class DialogHolder : MonoBehaviour {
                         Destroy(interact.GetComponent<Interact>().ui);
                     }
                 }
+                
 
                 dMAn.ShowBox();
                 dMAn.imageL = DialogPortraitL;
@@ -86,6 +88,7 @@ public class DialogHolder : MonoBehaviour {
             inzone = true;
         }
     }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")

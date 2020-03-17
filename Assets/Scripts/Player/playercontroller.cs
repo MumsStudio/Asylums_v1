@@ -17,6 +17,9 @@ public class playercontroller : MonoBehaviour {
     public bool canMove;
 
     private sfxManage sfxman;
+    public Collider2D player2D;
+    public Collider2D toilet2D;
+    public Collider2D monster2D;
 
     //Vector3 pos1 = new Vector3(568, 337, 0);
     //public int index;
@@ -39,7 +42,16 @@ public class playercontroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		playermoving = false;
+         if (player2D.IsTouching(toilet2D))
+        {
+            sfxman.watereflush.Play();
+        }
+         else if(player2D.IsTouching(monster2D))
+        {
+            sfxman.monster.Play();
+        }
+
+        playermoving = false; 
         
         if (!canMove)
         {
@@ -75,16 +87,17 @@ public class playercontroller : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {    
             moveSpeed = 2.4f;
-            sfxman.footstep.Play();
+            
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = 0.8f;
-            sfxman.monster.Play();
+           
         }
 
+       
     }
-
+    
     public void playerMoveEnable()
     {
         canMove = true;
@@ -157,12 +170,4 @@ public class playercontroller : MonoBehaviour {
         canMove = true;
     }
 
-    //public void SavePlayer()
-    //{
-    //    if (index ==1)
-    //    {
-    //        carryDataBetwScreen.Instance.posM = new Vector3(0, 0, 0);
-    //        carryDataBetwScreen.Instance.posM = pos1;
-    //    }
-    //}
 }

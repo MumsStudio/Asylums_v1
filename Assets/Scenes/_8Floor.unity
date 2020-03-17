@@ -158,7 +158,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3149,6 +3149,9 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 575665322}
   canMove: 1
+  player2D: {fileID: 575665323}
+  toilet2D: {fileID: 0}
+  monster2D: {fileID: 46014076}
 --- !u!95 &575665326
 Animator:
   serializedVersion: 3
@@ -6063,6 +6066,7 @@ MonoBehaviour:
   isEnforcedEvent: 0
   enforcedEventCalled: 0
   eventAfterEnforecedEvent: 0
+  toilet: {fileID: 0}
 --- !u!1 &1108000347
 GameObject:
   m_ObjectHideFlags: 0
@@ -11472,6 +11476,7 @@ MonoBehaviour:
   isEnforcedEvent: 1
   enforcedEventCalled: 0
   eventAfterEnforecedEvent: 1
+  toilet: {fileID: 0}
 --- !u!1 &1997262164
 GameObject:
   m_ObjectHideFlags: 0

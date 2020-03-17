@@ -16,6 +16,8 @@ public class LevelControl : MonoBehaviour
     public Camera cam;
     Vector3 pos1 = new Vector3(568, 337, 0);
 
+    private sfxManage sfxman;
+
     public void Start()
     {
         //get data from global
@@ -24,15 +26,19 @@ public class LevelControl : MonoBehaviour
             player.transform.position = carryDataBetwScreen.Instance.posM;
             cam.transform.position = carryDataBetwScreen.Instance.camPos;
         }
-       
+
+        sfxman = FindObjectOfType<sfxManage>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            sfxman.footstep.Play();
             if (loop == false)
             {
+                
                 //load level with build index
                 //SceneManager.LoadScene(index);
 

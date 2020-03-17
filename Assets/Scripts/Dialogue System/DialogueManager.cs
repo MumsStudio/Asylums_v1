@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour {
 
     private playercontroller thePlayer;
 
+    private sfxManage sfxman;
+
     //image
     public Image DialogPortraitL;
     public Image DialogPortraitR;
@@ -46,12 +48,15 @@ public class DialogueManager : MonoBehaviour {
     // Use this for initialization
     void Start () {        
         thePlayer = FindObjectOfType<playercontroller>();
+
+        sfxman = FindObjectOfType<sfxManage>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
+            sfxman.buttonPress.Play();
             currentLine++;
         }
 
