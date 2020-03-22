@@ -7,9 +7,11 @@ public class NPCMovement : MonoBehaviour {
     public float speed;
     public bool movingRight;
     public bool NpcCanMove;
+    public DialogHolder eventDialog;
     //public GameObject player;
     public float horizontalInput;
     public float verticalInput;
+
 
     private void Update()
     {
@@ -30,14 +32,15 @@ public class NPCMovement : MonoBehaviour {
         if (colli.gameObject.tag.Contains("Player")&& NpcCanMove)
         {
             speed = 0;
-            //Debug.Log("player");
+            Debug.Log("player");
+            eventDialog.isEnforcedEvent = true;
 
         }
         else if(!NpcCanMove)
         {
             speed = 0;
             transform.eulerAngles = new Vector3(0, 0, 0);
-            //Debug.Log("pl");
+            Debug.Log("pl");
 
         }
     }
