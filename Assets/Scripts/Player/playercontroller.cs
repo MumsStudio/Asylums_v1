@@ -42,11 +42,12 @@ public class playercontroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-         if (player2D.IsTouching(toilet2D))
+        // todo: move this to other sound control scripts, not in player controller
+        if (toilet2D != null && player2D.IsTouching(toilet2D))
         {
             sfxman.watereflush.Play();
         }
-         else if(player2D.IsTouching(monster2D))
+         else if(monster2D != null && player2D.IsTouching(monster2D))
         {
             sfxman.monster.Play();
         }
