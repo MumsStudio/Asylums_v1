@@ -36,7 +36,7 @@ public class NPCMovement : MonoBehaviour {
             eventDialog.isEnforcedEvent = true;
 
         }
-        else if(!NpcCanMove)
+        else if(!NpcCanMove && colli.gameObject.tag.Contains("NPCpositon"))
         {
             speed = 0;
             transform.eulerAngles = new Vector3(0, 0, 0);
