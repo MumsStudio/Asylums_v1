@@ -16,10 +16,7 @@ public class playercontroller : MonoBehaviour {
     private Rigidbody2D myRigidbody;
     public bool canMove;
 
-    private sfxManage sfxman;
-    public Collider2D player2D;
-    public Collider2D toilet2D;
-    public Collider2D monster2D;
+  
 
     //Vector3 pos1 = new Vector3(568, 337, 0);
     //public int index;
@@ -37,21 +34,13 @@ public class playercontroller : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
 
-        sfxman = FindObjectOfType<sfxManage>();
+  
     }
 	
 	// Update is called once per frame
 	void Update () {
         // todo: move this to other sound control scripts, not in player controller
-        if (toilet2D != null && player2D.IsTouching(toilet2D))
-        {
-            sfxman.watereflush.Play();
-        }
-         else if(monster2D != null && player2D.IsTouching(monster2D))
-        {
-            sfxman.monster.Play();
-        }
-
+    
         playermoving = false; 
         
         if (!canMove)

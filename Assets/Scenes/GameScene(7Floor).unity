@@ -2245,6 +2245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3e4df1618dd134fb96113f2d349ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player2D: {fileID: 1776335576}
+  toilet2D: {fileID: 1011680533}
+  monster2D: {fileID: 0}
   watereflush: {fileID: 2053034311}
   pickItem: {fileID: 59891919}
   footstep: {fileID: 1267080898}
@@ -4747,7 +4750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &714218435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8786,11 +8789,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e48ac809568fd49ab90327dadd4ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: 
+  items: 01000000
   infoDB: 
   eventsDone: 
   roomExplored: []
   pop: {fileID: 1503362270}
+  txt: {fileID: 1658482982}
+  miss: {fileID: 1083903620}
 --- !u!1 &1333666325
 GameObject:
   m_ObjectHideFlags: 0
@@ -11632,7 +11637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1658482983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12236,9 +12241,6 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 1776335570}
   canMove: 1
-  player2D: {fileID: 1776335576}
-  toilet2D: {fileID: 1011680533}
-  monster2D: {fileID: 374210416}
 --- !u!95 &1776335572
 Animator:
   serializedVersion: 3

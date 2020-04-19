@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Backpack : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class Backpack : MonoBehaviour
     public List<int> eventsDone;
     public List<string> roomExplored;
     public GameObject pop;
+
+    public Text txt;
+    public Text miss;
 
     //load itmes from globalObejct first 
     void Start()
@@ -28,6 +33,8 @@ public class Backpack : MonoBehaviour
         GameObject DB = GameObject.FindGameObjectWithTag("DB");
         string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+" has been added to the backpack.";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
+
+        txt.text = "item...";
     }
 
     public void removeFromBackpack(int item)
@@ -62,6 +69,8 @@ public class Backpack : MonoBehaviour
             string msg = "Information has been recorded.";
             Debug.Log(msg);
             pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
+
+            miss.text = "miss...";
         }  
     }
 

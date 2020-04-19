@@ -3774,9 +3774,6 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 575665322}
   canMove: 1
-  player2D: {fileID: 575665323}
-  toilet2D: {fileID: 1733628393}
-  monster2D: {fileID: 46014076}
 --- !u!95 &575665326
 Animator:
   serializedVersion: 3
@@ -10952,6 +10949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3e4df1618dd134fb96113f2d349ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player2D: {fileID: 0}
+  toilet2D: {fileID: 0}
+  monster2D: {fileID: 2120117225}
   watereflush: {fileID: 2115442918}
   pickItem: {fileID: 234333503}
   footstep: {fileID: 1122117340}
