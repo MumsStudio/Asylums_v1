@@ -5250,7 +5250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDB: []
-  infoDB: []
+  infoDB:
+  - id: 0
+    Infordb: {fileID: 0}
   eventDB: []
 --- !u!1 &619535516
 GameObject:
@@ -5974,7 +5976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &714218435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10404,7 +10406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: 01000000
-  infoDB: 
+  infoDB: 02000000
   eventsDone: 
   roomExplored: []
   pop: {fileID: 1503362270}
@@ -13480,8 +13482,8 @@ MonoBehaviour:
   infoDB: 
   eventsDone: 
   roomExplored: []
-  posM: {x: 579, y: 337, z: 0}
-  camPos: {x: 578, y: 336, z: -1}
+  posM: {x: 2.4, y: 2.4, z: 0}
+  camPos: {x: 2.4, y: 2.4, z: -1}
 --- !u!4 &1635624925
 Transform:
   m_ObjectHideFlags: 0

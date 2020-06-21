@@ -18,6 +18,7 @@ public class Backpack : MonoBehaviour
     //load itmes from globalObejct first 
     void Start()
     {
+
         items = carryDataBetwScreen.Instance.items;
         infoDB = carryDataBetwScreen.Instance.infoDB;
         eventsDone = carryDataBetwScreen.Instance.eventsDone;

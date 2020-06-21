@@ -2201,6 +2201,8 @@ MonoBehaviour:
   eventsDone: 
   roomExplored: []
   pop: {fileID: 1518154488}
+  txt: {fileID: 0}
+  miss: {fileID: 0}
 --- !u!1 &519896655
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,9 +6047,6 @@ MonoBehaviour:
     roomExplored: []
   PlayerObject: {fileID: 1105612960}
   canMove: 1
-  player2D: {fileID: 1105612961}
-  toilet2D: {fileID: 0}
-  monster2D: {fileID: 0}
 --- !u!95 &1105612964
 Animator:
   serializedVersion: 3
@@ -10100,7 +10099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1772972498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10125,8 +10124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3249de61ce2696e4284f8084119724af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PMove: {fileID: 0}
-  gameScene: {fileID: 0}
+  PMove: {fileID: 1105612963}
+  gameScene: {fileID: 1586212596}
   pauseMenuUI: {fileID: 796563584}
   Menue: {fileID: 1833869088}
   PlayerInfor: {fileID: 1827279324}
