@@ -62,6 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Info_Inventory.cs" />
+    <Compile Include="Assets\Item_Inventory.cs" />
+    <Compile Include="Assets\NewInfo.cs" />
     <Compile Include="Assets\Scripts\CanvasControl\DecisionManage.cs" />
     <Compile Include="Assets\Scripts\CanvasControl\LoadItemToItemUI.cs" />
     <Compile Include="Assets\Scripts\CanvasControl\PopUpMsgController.cs" />

@@ -35,7 +35,7 @@ public class Backpack : MonoBehaviour
         string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+" has been added to the backpack.";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
 
-        txt.text = "item...";
+        //txt.text = "item...";
     }
 
     public void removeFromBackpack(int item)
@@ -71,7 +71,7 @@ public class Backpack : MonoBehaviour
             Debug.Log(msg);
             pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
 
-            miss.text = "miss...";
+            //miss.text = "miss...";
         }  
     }
 
