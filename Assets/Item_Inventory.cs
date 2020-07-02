@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class Item_Inventory : MonoBehaviour
 {
-    public List<int> itemDB;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    public List<int> items;
+    private GameObject DB;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
-        itemDB = carryDataBetwScreen.Instance.items;
+        items = carryDataBetwScreen.Instance.items;
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
         //Test if this file works, please uncomment the code below. yxw
         /* 
         for(int i=0; i<2; i++)
@@ -21,20 +22,26 @@ public class Item_Inventory : MonoBehaviour
             itemDB.Add(i);
         }
         */
-        itemSlotContainer = transform.Find("ItemSlotContainer");
-        itemSlotTemplate = itemSlotContainer.Find("ItemSlotTemplate");
-        RefreshInventory_Items();
+
+        RefreshInventory_Item();
     }
 
-    public void RefreshInventory_Items()
+    public void RefreshInventory_Item()
     {
+        Transform itemSlotContainer = transform.Find("ItemSlotContainer");
+        Transform itemSlotTemplate = itemSlotContainer.Find("ItemSlotTemplate");
+        foreach (Transform child in itemSlotContainer)
+        {
+            if (child == itemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
         int x = 0;
         int y = 0;
         float itemSlotCellSizeX = 300f;
         float itemSlotCellSizeY = 300f;
-        GameObject DB = GameObject.FindGameObjectWithTag("DB");
 
-        foreach (int Id in itemDB)
+        foreach (int Id in items)
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
@@ -45,8 +52,6 @@ public class Item_Inventory : MonoBehaviour
 
             Text textName = itemSlotRectTransform.Find("TextName").GetComponent<Text>();
             textName.text = DB.GetComponent<ItemDatabase>().findItemById(Id).item.itemName;
-            Debug.Log("it's me!");
-            Debug.Log(textName.text);
 
             Text textDesc = itemSlotRectTransform.Find("TextDesc").GetComponent<Text>();
             textDesc.text = DB.GetComponent<ItemDatabase>().findItemById(Id).item.description;
@@ -62,5 +67,10 @@ public class Item_Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Backpack.itemDB_isChanged is true)
+        {
+            RefreshInventory_Item();
+            Backpack.itemDB_isChanged = false;
+        }
     }
 }

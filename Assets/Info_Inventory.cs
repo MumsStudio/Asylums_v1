@@ -6,32 +6,39 @@ using UnityEngine.UI;
 public class Info_Inventory : MonoBehaviour
 {
     public List<int> infoDB;
-    private Transform infoSlotContainer;
-    private Transform infoSlotTemplate;
+    private GameObject DB;
 
     // Start is called before the first frame update
     void Start()
     {
         infoDB = carryDataBetwScreen.Instance.infoDB;
+        DB = GameObject.FindGameObjectWithTag("DB");
+
         //Test if this file works, please uncomment the code below. yxw
         /*
         for (int i=0; i<2; i++)
         {
             infoDB.Add(i);
         }*/
-        
-        infoSlotContainer = transform.Find("InfoSlotContainer");
-        infoSlotTemplate = infoSlotContainer.Find("InfoSlotTemplate");
-        RefreshInventoryItems();
+
+        RefreshInventory_Info();
     }
 
-    public void RefreshInventoryItems()
+    public void RefreshInventory_Info()
     {
+        Transform infoSlotContainer = transform.Find("InfoSlotContainer");
+        Transform infoSlotTemplate = infoSlotContainer.Find("InfoSlotTemplate");
+        foreach(Transform child in infoSlotContainer)
+        {
+            if (child == infoSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
         int x = 0;
         int y = 0;
         float infoSlotCellSizeX = 400f;
         float infoSlotCellSizeY = 400f;
-        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+
 
         foreach (int Id in infoDB)
         {
@@ -57,6 +64,10 @@ public class Info_Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Backpack.infoDB_isChanged is true)
+        {
+            RefreshInventory_Info();
+            Backpack.infoDB_isChanged = false;
+        }
     }
 }

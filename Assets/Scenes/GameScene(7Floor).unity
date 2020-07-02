@@ -3594,7 +3594,7 @@ GameObject:
   - component: {fileID: 513097673}
   - component: {fileID: 513097672}
   m_Layer: 5
-  m_Name: Back
+  m_Name: ItemBacktoBackpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5231,7 +5231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50f765188ec79469dcfcc0497986f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDB: 
+  items: 
 --- !u!1 &775894062
 GameObject:
   m_ObjectHideFlags: 0
@@ -6996,7 +6996,7 @@ GameObject:
   - component: {fileID: 912833492}
   - component: {fileID: 912833491}
   m_Layer: 5
-  m_Name: Back
+  m_Name: InfoBacktoBackPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7210,7 +7210,7 @@ GameObject:
   - component: {fileID: 929671972}
   - component: {fileID: 929671975}
   m_Layer: 5
-  m_Name: BackMenu
+  m_Name: BacktoMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11766,7 +11766,7 @@ GameObject:
   - component: {fileID: 1646722577}
   - component: {fileID: 1646722576}
   m_Layer: 5
-  m_Name: Items
+  m_Name: Items_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15049,7 +15049,7 @@ GameObject:
   - component: {fileID: 2087874446}
   - component: {fileID: 2087874445}
   m_Layer: 5
-  m_Name: Information
+  m_Name: Information_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
