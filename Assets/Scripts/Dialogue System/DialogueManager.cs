@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
+public class DialogueManager : MonoBehaviour
+{
     public GameObject dBox;
     public Text dText;
 
@@ -15,7 +16,7 @@ public class DialogueManager : MonoBehaviour {
     public Item item;
     public Info info;
     public bool triggered;
-    private const int noInteract=0;
+    private const int noInteract = 0;
     private const int takeItem = 1;
     private const int takeImportantItem = 2;
     private const int takeInfo = 3;
@@ -46,17 +47,22 @@ public class DialogueManager : MonoBehaviour {
     public GameObject popup;
 
     // Use this for initialization
-    void Start () {        
+    void Start()
+    {
         thePlayer = FindObjectOfType<playercontroller>();
 
         sfxman = FindObjectOfType<sfxManage>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
-            sfxman.buttonPress.Play();
+            if (sfxman != null)
+            {
+                sfxman.buttonPress.Play();
+            }
             currentLine++;
         }
 
@@ -70,7 +76,7 @@ public class DialogueManager : MonoBehaviour {
             thePlayer.canMove = true;
 
             //if has interact option, do interact
-            if (interact!=0 && !triggered)
+            if (interact != 0 && !triggered)
             {
                 switch (interact)
                 {
@@ -93,15 +99,15 @@ public class DialogueManager : MonoBehaviour {
                             .GetComponentInChildren<Backpack>()
                             .addInfo(info.infoId);
                         break;
-                    default:                        
+                    default:
                         break;
                 }
-            }            
-            
+            }
+
             //if is an enforced event, destroy event after finish
             if (dialogHolder.isEnforcedEvent)
             {
-                dialogHolder.GetComponent<DialogHolder>().disable=true;
+                dialogHolder.GetComponent<DialogHolder>().disable = true;
             }
 
             // if save is needed
@@ -118,7 +124,7 @@ public class DialogueManager : MonoBehaviour {
                         break;
                 }
             }
-        }    
+        }
         dText.text = dialogLines[currentLine];
 
         //add picture
@@ -132,6 +138,6 @@ public class DialogueManager : MonoBehaviour {
     {
         dialogActive = true;
         dBox.SetActive(true);
-        thePlayer.canMove = false;       
+        thePlayer.canMove = false;
     }
 }

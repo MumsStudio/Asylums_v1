@@ -2444,8 +2444,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.099975586, y: 0}
-  m_SizeDelta: {x: -950.8, y: -390.2}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1060.8, y: -413.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301212995
 MonoBehaviour:
@@ -10951,7 +10951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3e4df1618dd134fb96113f2d349ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player2D: {fileID: 0}
+  player2D: {fileID: 575665323}
   toilet2D: {fileID: 0}
   monster2D: {fileID: 2120117225}
   watereflush: {fileID: 2115442918}
@@ -13145,8 +13145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3249de61ce2696e4284f8084119724af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PMove: {fileID: 0}
-  gameScene: {fileID: 0}
+  PMove: {fileID: 575665325}
+  gameScene: {fileID: 289031156}
   pauseMenuUI: {fileID: 1918656472}
   Menue: {fileID: 1494490947}
   PlayerInfor: {fileID: 2107788611}

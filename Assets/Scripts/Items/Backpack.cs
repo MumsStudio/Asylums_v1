@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,9 +16,15 @@ public class Backpack : MonoBehaviour
     public Text txt;
     public Text miss;
 
+    public static bool infoDB_isChanged;
+    public static bool itemDB_isChanged;
+
+    // public Info_Inventory UI_InfoListUpdate;
+
     //load itmes from globalObejct first 
     void Start()
     {
+
         items = carryDataBetwScreen.Instance.items;
         infoDB = carryDataBetwScreen.Instance.infoDB;
         eventsDone = carryDataBetwScreen.Instance.eventsDone;
@@ -28,19 +35,23 @@ public class Backpack : MonoBehaviour
     public void addToBackpack(int item)
     {
         items.Add(item);
+        //flag for update itemsUI. yxw
+        itemDB_isChanged = true;
 
         //popup msg needed
         GameObject DB = GameObject.FindGameObjectWithTag("DB");
         string msg = DB.GetComponent<ItemDatabase>().findItemById(item).item.name+" has been added to the backpack.";
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
 
-        txt.text = "item...";
+        //txt.text = "item...";
     }
 
     public void removeFromBackpack(int item)
     {
         //remove item from list
         items.Remove(item);
+        //flag for update itemsUI. yxw
+        itemDB_isChanged = true;
 
         //popup msg needed
         GameObject DB = GameObject.FindGameObjectWithTag("DB");
@@ -65,12 +76,15 @@ public class Backpack : MonoBehaviour
         if (!dup)
         {
             infoDB.Add(info);
+            //flag for update infoDB_UI. yxw
+            infoDB_isChanged = true;
+
             //popup msg
             string msg = "Information has been recorded.";
             Debug.Log(msg);
             pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
 
-            miss.text = "miss...";
+            //miss.text = "miss...";
         }  
     }
 
