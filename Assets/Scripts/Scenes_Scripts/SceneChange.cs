@@ -10,6 +10,11 @@ public class SceneChange : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void BacktoMain()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void PlaytoMain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
