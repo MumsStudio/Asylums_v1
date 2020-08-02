@@ -26,6 +26,7 @@ public class DialogHolder : MonoBehaviour {
     public int eventAfterEnforecedEvent;
     private const int DO_NOTHING = 0;
     private const int SAVE_GAME = 1;
+    public bool namelessInteracted;
 
     private sfxManage sfxman;
     public GameObject toilet;
@@ -41,10 +42,17 @@ public class DialogHolder : MonoBehaviour {
     void Update() {
 
         //if disabled, do nothing besides close dialog ui
-        if (disable) { }
+        if (disable) {
+
+            if (namelessInteracted) {
+                GameObject nameless = transform.parent.gameObject;
+                Destroy(nameless);
+            }
+        }
         else if ((inzone && Input.GetKeyUp(KeyCode.Space))
             || (enforcedEventCalled && isEnforcedEvent))
         {
+
             if (!dMAn.dialogActive)
             {
 
@@ -68,6 +76,7 @@ public class DialogHolder : MonoBehaviour {
                         interact.GetComponent<Interact>().triggered = true;
 
                         Destroy(interact.GetComponent<Interact>().ui);
+
                     }
                 }
                 
@@ -75,7 +84,7 @@ public class DialogHolder : MonoBehaviour {
                 dMAn.ShowBox();
                 dMAn.imageL = DialogPortraitL;
                 dMAn.imageR = DialogPortraitR;
-                inzone = false;                
+                inzone = false;
             }
         }
     }

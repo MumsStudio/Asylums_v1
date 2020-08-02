@@ -405,6 +405,7 @@ MonoBehaviour:
   playableDirector: {fileID: 1779932304}
   dialogHolder: {fileID: 1720422151}
   delaytime: 4
+  isTriggered: 0
 --- !u!61 &83332382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1164,13 +1165,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251304532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43, y: 0.04, z: -0.021484375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.43, y: 0.03999999, z: -0.021484375}
   m_LocalScale: {x: 0.48, y: 0.48, z: 1}
   m_Children:
   - {fileID: 1720422152}
   m_Father: {fileID: 1698696540}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &251304536
 Rigidbody2D:
@@ -4538,7 +4539,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1698696540}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &840204786
 MonoBehaviour:
@@ -9564,8 +9565,8 @@ Transform:
   - {fileID: 1548040174}
   - {fileID: 260632060}
   - {fileID: 136638151}
-  - {fileID: 251304535}
   - {fileID: 840204785}
+  - {fileID: 251304535}
   - {fileID: 83332380}
   m_Father: {fileID: 1586212597}
   m_RootOrder: 0
