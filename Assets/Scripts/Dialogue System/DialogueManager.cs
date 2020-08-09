@@ -99,6 +99,11 @@ public class DialogueManager : MonoBehaviour
                             .GetComponentInChildren<Backpack>()
                             .addInfo(info.infoId);
                         break;
+             //       case npcInteractedEvent:
+              //          GameObject.FindGameObjectWithTag("Player")
+               //             .GetComponentInChildren<Backpack>()
+              //             .addInfo(info.infoId);
+               //         break;
                     default:
                         break;
                 }

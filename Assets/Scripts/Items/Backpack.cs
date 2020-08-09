@@ -59,6 +59,13 @@ public class Backpack : MonoBehaviour
         pop.GetComponent<PopUpMsgController>().PopUpMsg(msg, 2f);
     }
 
+    public void addEvent(int eventID) {
+        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+        if (!eventsDone.Contains(eventID)){
+            eventsDone.Add(eventID);
+        }
+    }
+
     public void addInfo(int info)
     {        
         GameObject DB = GameObject.FindGameObjectWithTag("DB");

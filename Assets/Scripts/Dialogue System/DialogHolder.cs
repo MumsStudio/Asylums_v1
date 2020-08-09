@@ -27,6 +27,7 @@ public class DialogHolder : MonoBehaviour {
     private const int DO_NOTHING = 0;
     private const int SAVE_GAME = 1;
     public bool namelessInteracted;
+    public bool namelessInteractedDone;
 
     private sfxManage sfxman;
     public GameObject toilet;
@@ -43,8 +44,8 @@ public class DialogHolder : MonoBehaviour {
 
         //if disabled, do nothing besides close dialog ui
         if (disable) {
-
-            if (namelessInteracted) {
+            if (namelessInteracted)
+            {
                 GameObject nameless = transform.parent.gameObject;
                 Destroy(nameless);
             }
