@@ -14,7 +14,7 @@ public class Item_Inventory : MonoBehaviour
     {
 
         items = carryDataBetwScreen.Instance.items;
-        GameObject DB = GameObject.FindGameObjectWithTag("DB");
+        DB = GameObject.FindGameObjectWithTag("DB");
         //Test if this file works, please uncomment the code below. yxw
         /* 
         for(int i=0; i<2; i++)
@@ -67,10 +67,6 @@ public class Item_Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Backpack.itemDB_isChanged is true)
-        {
-            RefreshInventory_Item();
-            Backpack.itemDB_isChanged = false;
-        }
+
     }
 }

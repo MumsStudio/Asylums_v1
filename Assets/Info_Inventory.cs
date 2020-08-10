@@ -26,18 +26,20 @@ public class Info_Inventory : MonoBehaviour
 
     public void RefreshInventory_Info()
     {
-        Transform infoSlotContainer = transform.Find("InfoSlotContainer");
-        Transform infoSlotTemplate = infoSlotContainer.Find("InfoSlotTemplate");
+        Transform infoSlotContainer = transform.Find("Viewport/Content");
+        Transform infoSlotTemplate = infoSlotContainer.Find("Button");
         foreach(Transform child in infoSlotContainer)
         {
             if (child == infoSlotTemplate) continue;
             Destroy(child.gameObject);
         }
 
-        int x = 0;
-        int y = 0;
-        float infoSlotCellSizeX = 400f;
-        float infoSlotCellSizeY = 400f;
+        //float x0 = infoSlotTemplate.position.x;
+        //float y0 = infoSlotTemplate.position.y;
+        float x0 = 0;
+        float y0 = 134.5f;
+        int count = 0;
+        float infoSlotCellSizeY = -40f;
 
 
         foreach (int Id in infoDB)
@@ -45,29 +47,19 @@ public class Info_Inventory : MonoBehaviour
             RectTransform infoSlotRectTransform = Instantiate(infoSlotTemplate, infoSlotContainer).GetComponent<RectTransform>();
             infoSlotRectTransform.gameObject.SetActive(true);
 
-            infoSlotRectTransform.anchoredPosition = new Vector2(x * infoSlotCellSizeX, y * infoSlotCellSizeY);
+            infoSlotRectTransform.anchoredPosition = new Vector2(x0,  y0 + count*infoSlotCellSizeY);
+            
 
-            Text textTitle = infoSlotRectTransform.Find("TextTitle").GetComponent<Text>();
+            Text textTitle = infoSlotRectTransform.Find("Text").GetComponent<Text>();
             textTitle.text = DB.GetComponent<ItemDatabase>().findInfoById(Id).Infordb.infoTitle;
-
-            Text textDesc = infoSlotRectTransform.Find("TextDesc").GetComponent<Text>();
-            textDesc.text = DB.GetComponent<ItemDatabase>().findInfoById(Id).Infordb.description;
-
-            x++;
-            if (x >= 3)
-            {
-                x = 0;
-                y--;
-            }
+            // not sure how to simplify the following sentenses:
+            infoSlotRectTransform.gameObject.GetComponent<infoHolderforDetails>().title = textTitle.text;
+            infoSlotRectTransform.gameObject.GetComponent<infoHolderforDetails>().detail=DB.GetComponent<ItemDatabase>().findInfoById(Id).Infordb.description;
+            count++;
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (Backpack.infoDB_isChanged is true)
-        {
-            RefreshInventory_Info();
-            Backpack.infoDB_isChanged = false;
-        }
     }
 }
