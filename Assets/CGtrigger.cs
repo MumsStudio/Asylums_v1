@@ -7,7 +7,8 @@ public class CGtrigger : MonoBehaviour
 {
     private playercontroller thePlayer;
     public GameObject orginal;
-    public GameObject CG;
+    public GameObject nurseImg;
+    public GameObject FlashImg;
     public GameObject soundSource;
 
     public void Start()
@@ -21,21 +22,35 @@ public class CGtrigger : MonoBehaviour
         {
             thePlayer.canMove = false;
             orginal.SetActive(false);
-            CG.SetActive(true);
             soundSource.SetActive(false);
+
             
-            StartCoroutine(ChangeText(2));
+            StartCoroutine(FlashEffect(1));
+      
+
         }
     }
-
-    IEnumerator ChangeText(int time)
+    IEnumerator FlashEffect(int time)
     {
-        
-        yield return new WaitForSeconds(time);
-        CG.SetActive(false);
+
+        yield return new WaitForSeconds(1);
+        nurseImg.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        nurseImg.SetActive(false);
+        yield return new WaitForSeconds(0.4f);
+        nurseImg.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        nurseImg.SetActive(false);
+        yield return new WaitForSeconds(0.8f);
+        nurseImg.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+        nurseImg.SetActive(false);
+        FlashImg.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+       
 
         SceneManager.LoadScene(4);
     }
-
-
 }

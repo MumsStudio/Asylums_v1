@@ -131,12 +131,12 @@ GameObject:
   m_Component:
   - component: {fileID: 85290951}
   - component: {fileID: 85290952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 8433-160321115147
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &85290951
 Transform:
@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85290950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -428.57, y: -206.98, z: 0}
+  m_LocalPosition: {x: 7.8, y: -724, z: 0}
   m_LocalScale: {x: 3.4836442, y: 3.4836442, z: 3.4836442}
   m_Children: []
   m_Father: {fileID: 1244374947}
@@ -196,7 +196,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 6, y: 4}
+  m_Size: {x: 518.3611, y: 277.92032}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
