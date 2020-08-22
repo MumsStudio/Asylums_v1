@@ -17,15 +17,16 @@ public class NPCMovement : MonoBehaviour {
     {
         //movement code
         //transform.position = player.transform.position;
-        if (!movingRight)
+        if (NpcCanMove)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            if (!movingRight)
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            }
+            else { transform.Translate(Vector2.right * speed * Time.deltaTime); }
         }
-        else { transform.Translate(Vector2.right * speed * Time.deltaTime); }
-        
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D colli)
     {
         //if collid with player start display dialog
