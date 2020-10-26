@@ -7,7 +7,7 @@ public class sfxManage : MonoBehaviour
     private sfxManage sfxman;
     public Collider2D player2D;
     public Collider2D toilet2D;
-    public Collider2D monster2D;
+    public BoxCollider2D monster2D;
 
     public AudioSource watereflush;
     public AudioSource pickItem;
